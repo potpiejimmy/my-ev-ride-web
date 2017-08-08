@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
     template: `
         <div class="footer">
             <div class="card clearfix">
-                <span class="footer-text-left">My EV Ride</span>
+                <span class="footer-text-left">Imprint</span>
                 <span class="footer-text-right"><span class="ui-icon ui-icon-copyright"></span>  <span>All Rights Reserved</span></span>
             </div>
         </div>

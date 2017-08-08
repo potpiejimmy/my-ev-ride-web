@@ -3,7 +3,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule}    from '@angular/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {LocationStrategy,HashLocationStrategy} from '@angular/common';
+//import {LocationStrategy,HashLocationStrategy} from '@angular/common';
 import {AppRoutes} from './app.routes';
 import 'rxjs/add/operator/toPromise';
 
@@ -78,6 +78,9 @@ import {AppMenuComponent,AppSubMenu}  from './app.menu.component';
 import {AppTopBar}  from './app.topbar.component';
 import {AppFooter}  from './app.footer.component';
 import {InlineProfileComponent}  from './app.profile.component';
+
+// my components
+import {MainComponent}  from './pages/main.component';
 
 @NgModule({
     imports: [
@@ -159,9 +162,11 @@ import {InlineProfileComponent}  from './app.profile.component';
         AppTopBar,
         AppFooter,
         InlineProfileComponent,
+        // my components
+        MainComponent
     ],
     providers: [
-        {provide: LocationStrategy, useClass: HashLocationStrategy}
+//        {provide: LocationStrategy, useClass: HashLocationStrategy}
     ],
     bootstrap:[AppComponent]
 })

@@ -1,4 +1,5 @@
 import {Component,AfterViewInit,ElementRef,Renderer,ViewChild} from '@angular/core';
+import {Router} from '@angular/router';
 
 enum MenuOrientation {
     STATIC,
@@ -51,11 +52,13 @@ export class AppComponent implements AfterViewInit {
 
     @ViewChild('layoutMenuScroller') layoutMenuScrollerViewChild: ElementRef;
 
-    constructor(public renderer: Renderer) {}
+    constructor(public renderer: Renderer, private router: Router) {}
 
     ngAfterViewInit() {
-        this.layoutContainer = <HTMLDivElement> this.layourContainerViewChild.nativeElement;
-        this.layoutMenuScroller = <HTMLDivElement> this.layoutMenuScrollerViewChild.nativeElement;
+        if (this.layourContainerViewChild)
+            this.layoutContainer = <HTMLDivElement> this.layourContainerViewChild.nativeElement;
+        if (this.layoutMenuScrollerViewChild)
+            this.layoutMenuScroller = <HTMLDivElement> this.layoutMenuScrollerViewChild.nativeElement;
 
         //hides the horizontal submenus or top menu if outside is clicked
         this.documentClickListener = this.renderer.listenGlobal('body', 'click', (event) => {            
@@ -170,4 +173,9 @@ export class AppComponent implements AfterViewInit {
         jQuery(this.layoutMenuScroller).nanoScroller({flash:true});
     }
 
+    // my
+
+    isLandingPage() {
+        return this.router.url === '/' || this.router.url.startsWith("/#");
+    }
 }
