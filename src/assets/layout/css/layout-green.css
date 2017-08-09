@@ -465,7 +465,7 @@
     outline: 0 none;
     background-color: #6ec071; }
   .login-panel .ui-button.secondary:hover {
-    background-color: #4527A0; }
+    background-color: #efdb33; }
   .login-panel .ui-button.secondary:focus {
     outline: 0 none;
     background-color: #fff06e; }
@@ -611,6 +611,29 @@
       font-weight: 400;
       color: #ffffff;
       line-height: 36px; }
+.landing-wrapper #introduction {
+  margin: 0 auto;
+  padding: 50px 0px;
+  text-align: center; }
+  .landing-wrapper #introduction h2 {
+    font-weight: 400;
+    line-height: 28px; }
+  .landing-wrapper #introduction h3 {
+    font-weight: 400; }
+  .landing-wrapper #introduction p {
+    color: #757575; }
+.landing-wrapper #howitworks {
+  background-color: #cccccc;
+  margin: 0 auto;
+  padding: 50px 0px;
+  text-align: center; }
+  .landing-wrapper #howitworks h2 {
+    font-weight: 400;
+    line-height: 28px; }
+  .landing-wrapper #howitworks h3 {
+    font-weight: 400; }
+  .landing-wrapper #howitworks p {
+    color: #757575; }
 .landing-wrapper #features {
   width: 960px;
   margin: 0 auto;
@@ -647,26 +670,23 @@
       .landing-wrapper #features .feature-icon:hover i {
         color: #ffffff; }
 .landing-wrapper #promotion {
-  background: url("../images/landing/promotion.png") top left no-repeat;
+  background-color: #4CAF50;
+  padding: 75px 0 75px 75px;
   background-size: 100% auto; }
-  .landing-wrapper #promotion .ui-lg-8 {
-    padding: 150px 0 0 150px; }
-    .landing-wrapper #promotion .ui-lg-8 h1 {
+    .landing-wrapper #promotion .ui-lg-6 h1 {
       font-weight: 48px;
       color: #ffffff;
       font-weight: 400; }
-  .landing-wrapper #promotion .ui-lg-4 {
-    margin: -50px 0 -50px 0; }
-    .landing-wrapper #promotion .ui-lg-4 .card {
+    .landing-wrapper #promotion .ui-lg-6 .card {
       -webkit-box-shadow: 0 0 27px 4.5px rgba(13, 36, 62, 0.1);
       -moz-box-shadow: 0 0 27px 4.5px rgba(13, 36, 62, 0.1);
       box-shadow: 0 0 27px 4.5px rgba(13, 36, 62, 0.1);
       margin-bottom: 20px; }
-      .landing-wrapper #promotion .ui-lg-4 .card h3 {
+      .landing-wrapper #promotion .ui-lg-6 .card h3 {
         font-weight: 400; }
-      .landing-wrapper #promotion .ui-lg-4 .card p {
+      .landing-wrapper #promotion .ui-lg-6 .card p {
         color: #757575; }
-      .landing-wrapper #promotion .ui-lg-4 .card:last-child {
+      .landing-wrapper #promotion .ui-lg-6 .card:last-child {
         margin-bottom: 0; }
 .landing-wrapper #pricing {
   width: 960px;
@@ -759,7 +779,7 @@
       z-index: 100;
       position: fixed;
       top: 0;
-      background: #424242;
+      background: #4CAF50;
       background-size: 100% auto;
       padding: 30px;
       width: 100%;

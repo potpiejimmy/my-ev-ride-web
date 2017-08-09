@@ -22,15 +22,10 @@ export class AppMenuComponent implements OnInit {
     ngOnInit() {
         this.model = [
             {
-                label: 'Template Pages', icon: 'get_app',
-                items: [
-                    {label: 'Empty Page', icon: 'hourglass_empty', routerLink: ['/empty']},
-                    {label: 'Landing Page', icon: 'flight_land', url: 'assets/pages/landing.html', target: '_blank'},
-                    {label: 'Login Page', icon: 'verified_user', url: 'assets/pages/login.html', target: '_blank'},
-                    {label: 'Error Page', icon: 'error', url: 'assets/pages/error.html', target: '_blank'},
-                    {label: '404 Page', icon: 'error_outline', url: 'assets/pages/404.html', target: '_blank'},
-                    {label: 'Access Denied Page', icon: 'security', url: 'assets/pages/access.html', target: '_blank'}
-                ]
+                label: 'Browse', icon: 'pageview', routerLink: ['/']
+            },
+            {
+                label: 'Create', icon: 'create', routerLink: ['/create']
             }
         ];
     }
