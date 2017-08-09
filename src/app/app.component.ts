@@ -172,10 +172,4 @@ export class AppComponent implements AfterViewInit {
 
         jQuery(this.layoutMenuScroller).nanoScroller({flash:true});
     }
-
-    // my
-
-    isLandingPage() {
-        return this.router.url === '/' || this.router.url.startsWith("/#");
-    }
 }

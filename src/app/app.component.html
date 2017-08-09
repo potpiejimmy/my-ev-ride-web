@@ -1,115 +1,31 @@
 <div class="layout-wrapper" [ngClass]="{'layout-compact':layoutCompact}">
 
-    <div *ngIf="!isLandingPage()">
-        <div #layoutContainer class="layout-container" 
-                [ngClass]="{'menu-layout-static': !isOverlay(),
-                'menu-layout-overlay': isOverlay(),
-                'layout-menu-overlay-active': overlayMenuActive,
-                'menu-layout-horizontal': isHorizontal(),
-                'layout-menu-static-inactive': staticMenuDesktopInactive,
-                'layout-menu-static-active': staticMenuMobileActive}">
+    <div #layoutContainer class="layout-container" 
+            [ngClass]="{'menu-layout-static': !isOverlay(),
+            'menu-layout-overlay': isOverlay(),
+            'layout-menu-overlay-active': overlayMenuActive,
+            'menu-layout-horizontal': isHorizontal(),
+            'layout-menu-static-inactive': staticMenuDesktopInactive,
+            'layout-menu-static-active': staticMenuMobileActive}">
 
-            <app-topbar></app-topbar>
+        <app-topbar></app-topbar>
 
-            <div class="layout-menu" [ngClass]="{'layout-menu-dark':darkMenu}" (click)="onMenuClick($event)">
-                <div #layoutMenuScroller class="nano">
-                    <div class="nano-content menu-scroll-content">
-                        <inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"></inline-profile>
-                        <app-menu [reset]="resetMenu"></app-menu>
-                    </div>
+        <div class="layout-menu" [ngClass]="{'layout-menu-dark':darkMenu}" (click)="onMenuClick($event)">
+            <div #layoutMenuScroller class="nano">
+                <div class="nano-content menu-scroll-content">
+                    <inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"></inline-profile>
+                    <app-menu [reset]="resetMenu"></app-menu>
                 </div>
             </div>
-            
-            <div class="layout-main">
-                <router-outlet></router-outlet>
-                
-                <app-footer></app-footer>
-            </div>
-            
-            <div class="layout-mask"></div>
         </div>
-    </div>
-
-    <div *ngIf="isLandingPage()">
-        <body class="landing-body">
-            <div class="landing-wrapper">
-                <div id="header">
-                    <div class="header-top clearfix">
-                        <span class="logo"></span>
-                        
-                        <a id="menu-button" href="#">
-                            <i class="material-icons">menu</i>
-                        </a>
-                        <ul id="menu" class="animated">
-                            <li><a href="#"><i class="ui-icon ui-icon-home"></i><span>Home</span></a></li>
-                            <li><a href="#introduction"><i class="ui-icon ui-icon-open-in-browser"></i><span>Introduction</span></a></li>
-                            <li><a href="#features"><i class="ui-icon ui-icon-list"></i><span>Features</span></a></li>
-                            <li><a href="#promotion"><i class="ui-icon ui-icon-group-work"></i><span>Promotion</span></a></li>
-                            <li><a href="#pricing"><i class="ui-icon ui-icon-attach-money"></i><span>Pricing</span></a></li>
-                            <li><a href="#video"><i class="ui-icon ui-icon-videocam"></i><span>Video</span></a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="header-content clearfix">
-                        <h1>Buy your dream EV car for half its price or less</h1>
-                        <a [routerLink]="['/main']" class="ui-button">
-                            <span class="ui-button-text">Start now!</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div id="features">
-                    <h2>The Ultimate Material Application Template for PrimeNG</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse delectus sit velit, aspernatur voluptates molestiae, enim recusandae. Odit dicta, maiores quas ad nesciunt, illum expedita veritatis illo quam odio id!</p>
-                
-                    <div class="ui-g">
-                        <div class="ui-g-12 ui-md-4">
-                            <h3>Creative</h3>
-                            <p>Lorem ipsum dolor sit amet</p>
-                            <div class="feature-icon">
-                                <i class="material-icons">&#xE150;</i>
-                            </div>
-                        </div>
-                        <div class="ui-g-12 ui-md-4">
-                            <h3>Responsive</h3>
-                            <p>Lorem ipsum dolor sit amet</p>
-                            <div class="feature-icon">
-                                <i class="material-icons">&#xE32C;</i>
-                            </div>
-                        </div>
-                        <div class="ui-g-12 ui-md-4">
-                            <h3>Cross Browser</h3>
-                            <p>Lorem ipsum dolor sit amet</p>
-                            <div class="feature-icon">
-                                <i class="material-icons">&#xE89D;</i>
-                            </div>
-                        </div>
-                        
-                        <div class="ui-g-12 ui-md-4">
-                            <div class="feature-icon">
-                                <i class="material-icons">&#xE259;</i>
-                            </div>
-                            <h3>Well Organized</h3>
-                            <p>Well Organ</p>
-                        </div>
-                        <div class="ui-g-12 ui-md-4">
-                            <div class="feature-icon">
-                                <i class="material-icons">&#xE40A;</i>
-                            </div>
-                            <h3>Beautiful</h3>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-                        <div class="ui-g-12 ui-md-4">
-                            <div class="feature-icon">
-                                <i class="material-icons">&#xE86C;</i>
-                            </div>
-                            <h3>Just For you</h3>
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </body>
+        
+        <div class="layout-main">
+            <router-outlet></router-outlet>
+            
+            <app-footer></app-footer>
+        </div>
+        
+        <div class="layout-mask"></div>
     </div>
 
 </div>

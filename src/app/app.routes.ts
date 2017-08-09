@@ -3,7 +3,7 @@ import {ModuleWithProviders} from '@angular/core';
 import {MainComponent}  from './pages/main.component';
 
 export const routes: Routes = [
-    {path: 'main', component: MainComponent},
+    {path: '', component: MainComponent},
 ];
 
 export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(routes);
