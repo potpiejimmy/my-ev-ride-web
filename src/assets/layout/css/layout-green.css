@@ -614,6 +614,7 @@
 .landing-wrapper #introduction {
   margin: 0 auto;
   padding: 50px;
+  max-width: 960px;
   text-align: center; }
   .landing-wrapper #introduction h2 {
     font-weight: 400;
@@ -648,6 +649,7 @@
   background-color: #cccccc;
   margin: 0 auto;
   padding: 50px;
+  max-width: 960px;
   text-align: center; }
   .landing-wrapper #howitworks h2 {
     font-weight: 400;
@@ -1654,7 +1656,7 @@ div.prototype_stamp {
     background-size: 100%;
     width: 170px;
     height: 96px;
-    position: absolute;
+    position: fixed;
     top: 85px;
     left: 20px;
 }
