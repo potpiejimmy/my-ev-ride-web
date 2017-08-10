@@ -950,9 +950,9 @@ body {
       vertical-align: middle;
       height: 36px;
       margin-right: 10px;
-      position: relative;
-      left: -16px;
-      top: 3px;
+      position: absolute;
+      left: -10px;
+      top: 16px;
       background-color: #ffeb3b;
       -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
@@ -1651,8 +1651,10 @@ body .layout-wrapper.layout-compact {
 
 div.prototype_stamp {
     background: url("../images/prototype.png") no-repeat;
-    background-size: 64%;
-    width: 300px;
-    height: 170px;
+    background-size: 100%;
+    width: 170px;
+    height: 96px;
     position: absolute;
+    top: 85px;
+    left: 20px;
 }
