@@ -25,7 +25,7 @@ export class AppMenuComponent implements OnInit {
                 label: 'Browse', icon: 'pageview', routerLink: ['/']
             },
             {
-                label: 'Create', icon: 'create', routerLink: ['/create']
+                label: 'New car', icon: 'create', routerLink: ['/new']
             }
         ];
     }

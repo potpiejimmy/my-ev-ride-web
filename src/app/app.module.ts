@@ -81,6 +81,7 @@ import {InlineProfileComponent}  from './app.profile.component';
 
 // my components
 import {MainComponent}  from './pages/main.component';
+import {NewCarComponent}  from './pages/newcar.component';
 
 @NgModule({
     imports: [
@@ -163,7 +164,8 @@ import {MainComponent}  from './pages/main.component';
         AppFooter,
         InlineProfileComponent,
         // my components
-        MainComponent
+        MainComponent,
+        NewCarComponent
     ],
     providers: [
 //        {provide: LocationStrategy, useClass: HashLocationStrategy}
