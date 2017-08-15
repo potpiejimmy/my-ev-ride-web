@@ -1,5 +1,5 @@
 import {NgModule}      from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule}    from '@angular/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -79,9 +79,13 @@ import {AppTopBar}  from './app.topbar.component';
 import {AppFooter}  from './app.footer.component';
 import {InlineProfileComponent}  from './app.profile.component';
 
+// app specifics
+import { AgmCoreModule } from '@agm/core';
+
 // my components
 import {MainComponent}  from './pages/main.component';
 import {NewCarComponent}  from './pages/newcar.component';
+import {ChooseLocationComponent}  from './components/chooselocation.component';
 
 @NgModule({
     imports: [
@@ -154,7 +158,13 @@ import {NewCarComponent}  from './pages/newcar.component';
         ToolbarModule,
         TooltipModule,
         TreeModule,
-        TreeTableModule
+        TreeTableModule,
+        // app specifics
+        AgmCoreModule.forRoot({
+            apiKey: "AIzaSyD6MbJyWWmRUR9ZcfyDsMl5gNAW-MOHW0A", // for my-ev-ride, unrestricted
+            libraries: ["places"]
+          }),
+        ReactiveFormsModule
     ],
     declarations: [
         AppComponent,
@@ -165,7 +175,8 @@ import {NewCarComponent}  from './pages/newcar.component';
         InlineProfileComponent,
         // my components
         MainComponent,
-        NewCarComponent
+        NewCarComponent,
+        ChooseLocationComponent
     ],
     providers: [
 //        {provide: LocationStrategy, useClass: HashLocationStrategy}

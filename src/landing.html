@@ -33,6 +33,11 @@
                   e.preventDefault();
               });
           });
+
+          function closeLMenu() {
+            if ($('#menu').hasClass('lmenu-active'))
+                $('#menu-button').click();
+          }
       </script>
   </head>
   
@@ -47,11 +52,11 @@
                       <i class="material-icons">menu</i>
                   </a>
                   <ul id="menu" class="animated">
-                     <li><a href="#"><span>Home</span></a></li>
-                     <li><a href="#introduction"></i><span>Introduction</span></a></li>
-                     <li><a href="#promotion"></i><span>Motivation</span></a></li>
-                     <li><a href="#features"></i><span>Features</span></a></li>
-                     <li><a href="#howitworks"></i><span>How it works</span></a></li>
+                     <li><a href="#" onclick="closeLMenu()"><span>Home</span></a></li>
+                     <li><a href="#introduction" onclick="closeLMenu()"></i><span>Introduction</span></a></li>
+                     <li><a href="#promotion" onclick="closeLMenu()"></i><span>Motivation</span></a></li>
+                     <li><a href="#features" onclick="closeLMenu()"></i><span>Features</span></a></li>
+                     <li><a href="#howitworks" onclick="closeLMenu()"></i><span>How it works</span></a></li>
                   </ul>
               </div>
               
@@ -136,6 +141,8 @@
             <p>
                 If you don't require to have access to your car on a 24/7 basis, then we believe my-ev-ride might
                 just be the right solution for you. 
+                my-ev-ride will let you find and get in contact with people near you to co-own and share your car
+                with in an automated, easy-to-use platform-based approach.
             </p>
             <p>
                 We call it <i>Platform-based Co-Owning</i>.
@@ -144,10 +151,10 @@
 
           <div id="promotion" class="clearfix">
               <div class="ui-g">
-                  <div class="ui-g-12 ui-lg-6">
+                  <div class="ui-g-12 ui-lg-3">
                       <h1>Motivation</h1>
                   </div>
-                  <div class="ui-g-12 ui-lg-6">
+                  <div class="ui-g-12 ui-lg-9">
                       <div class="card">
                           <h3>Cleaner</h3>
                           <p>Electric vehicles are safer, cleaner and better than conventional cars with an internal combustion engine.</p>

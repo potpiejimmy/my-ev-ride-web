@@ -696,19 +696,19 @@
 .landing-wrapper #promotion {
   background: url("../images/landing/moss-texture.jpg");
   padding: 75px 0 75px 75px; }
-    .landing-wrapper #promotion .ui-lg-6 h1 {
+    .landing-wrapper #promotion .ui-lg-3 h1 {
       color: #ffffff;
       font-weight: 400; }
-    .landing-wrapper #promotion .ui-lg-6 .card {
+    .landing-wrapper #promotion .ui-lg-9 .card {
       -webkit-box-shadow: 0 0 27px 4.5px rgba(13, 36, 62, 0.1);
       -moz-box-shadow: 0 0 27px 4.5px rgba(13, 36, 62, 0.1);
       box-shadow: 0 0 27px 4.5px rgba(13, 36, 62, 0.1);
       margin-bottom: 20px; }
-      .landing-wrapper #promotion .ui-lg-6 .card h3 {
+      .landing-wrapper #promotion .ui-lg-9 .card h3 {
         font-weight: 400; }
-      .landing-wrapper #promotion .ui-lg-6 .card p {
+      .landing-wrapper #promotion .ui-lg-9 .card p {
         color: #757575; }
-      .landing-wrapper #promotion .ui-lg-6 .card:last-child {
+      .landing-wrapper #promotion .ui-lg-9 .card:last-child {
         margin-bottom: 0; }
 .landing-wrapper #pricing {
   width: 960px;
