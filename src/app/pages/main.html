@@ -1,4 +1,35 @@
-<div class="card card-w-title">
-<h1>Browse available cars near you</h1>
-<choose-location></choose-location>
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-lg-9">
+        <div class="card card-w-title">
+            <h1>Browse available cars near you</h1>
+            <p-dataTable [value]="bookings" [responsive]="true">
+                <header>Current day's entries</header>
+                <p-column field="id" header="ID" [style]="{'width':'60px'}"></p-column>
+                <p-column field="booking_template.psp" header="PSP"></p-column>
+                <p-column field="booking_template.name" header="Name"></p-column>
+                <p-column field="description" header="Description"></p-column>
+                <p-column field="sales_representative" header="Sales Contact"></p-column>
+                <p-column field="booking_template.subproject" header="Subproject"></p-column>
+                <p-column>
+                    <ng-template pTemplate="header">Hours</ng-template>
+                    <ng-template let-row="rowData" pTemplate="body">
+                      {{formattedHours(row.minutes)}}
+                    </ng-template>
+                </p-column>
+                <p-column>
+                    <ng-template pTemplate="header">Actions</ng-template>
+                    <ng-template let-row="rowData" pTemplate="body">
+                        <i class="fa ui-icon-edit linkcursor" (click)="edit(row)"></i>
+                        <i class="fa ui-icon-delete linkcursor" (click)="delete(row)"></i>
+                    </ng-template>
+                </p-column>
+            </p-dataTable>
+        </div>
+    </div>
+    <div class="ui-g-12 ui-lg-3">
+        <div class="card card-w-title">
+            <h1><i class="material-icons">location_on</i>Set your location</h1>
+            <choose-location></choose-location>
+        </div>
+    </div>
 </div>

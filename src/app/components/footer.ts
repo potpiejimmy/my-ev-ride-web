@@ -1,5 +1,5 @@
 import {Component,Inject,forwardRef} from '@angular/core';
-import {AppComponent} from './app.component';
+import {AppComponent} from '../app';
 
 @Component({
     selector: 'app-footer',

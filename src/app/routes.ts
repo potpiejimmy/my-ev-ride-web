@@ -1,7 +1,7 @@
 import {Routes,RouterModule} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
-import {MainComponent}  from './pages/main.component';
-import {NewCarComponent}  from './pages/newcar.component';
+import {MainComponent}  from './pages/main';
+import {NewCarComponent}  from './pages/newcar';
 
 export const routes: Routes = [
     {path: '', component: MainComponent},

@@ -1,9 +1,9 @@
 import {Component,Inject,forwardRef} from '@angular/core';
-import {AppComponent} from './app.component';
+import {AppComponent} from '../app';
 
 @Component({
     selector: 'app-topbar',
-    templateUrl: './app.topbar.component.html'
+    templateUrl: './topbar.html'
 })
 export class AppTopBar {
 

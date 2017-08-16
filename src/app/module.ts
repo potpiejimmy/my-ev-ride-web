@@ -4,7 +4,7 @@ import {HttpModule}    from '@angular/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 //import {LocationStrategy,HashLocationStrategy} from '@angular/common';
-import {AppRoutes} from './app.routes';
+import {AppRoutes} from './routes';
 import 'rxjs/add/operator/toPromise';
 
 import {AccordionModule} from 'primeng/primeng';
@@ -73,19 +73,19 @@ import {TooltipModule} from 'primeng/primeng';
 import {TreeModule} from 'primeng/primeng';
 import {TreeTableModule} from 'primeng/primeng';
 
-import {AppComponent}  from './app.component';
-import {AppMenuComponent,AppSubMenu}  from './app.menu.component';
-import {AppTopBar}  from './app.topbar.component';
-import {AppFooter}  from './app.footer.component';
-import {InlineProfileComponent}  from './app.profile.component';
+import {AppComponent}  from './app';
+import {AppMenuComponent,AppSubMenu}  from './components/menu';
+import {AppTopBar}  from './components/topbar';
+import {AppFooter}  from './components/footer';
+import {InlineProfileComponent}  from './components/profile';
 
 // app specifics
 import { AgmCoreModule } from '@agm/core';
 
 // my components
-import {MainComponent}  from './pages/main.component';
-import {NewCarComponent}  from './pages/newcar.component';
-import {ChooseLocationComponent}  from './components/chooselocation.component';
+import {MainComponent}  from './pages/main';
+import {NewCarComponent}  from './pages/newcar';
+import {ChooseLocationComponent}  from './components/chooselocation';
 
 @NgModule({
     imports: [

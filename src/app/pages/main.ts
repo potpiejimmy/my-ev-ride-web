@@ -5,4 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: 'main.html'
 })
 export class MainComponent {
+  bookings = [];  
 }
