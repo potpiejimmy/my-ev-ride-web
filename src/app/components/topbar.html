@@ -14,9 +14,9 @@
             <i></i>
         </a>
         
-        <a id="rightpanel-menu-button" href="#" (click)="app.onRightPanelButtonClick($event)">
+        <!--a id="rightpanel-menu-button" href="#" (click)="app.onRightPanelButtonClick($event)">
             <i class="material-icons">more_vert</i>
-        </a>
+        </a-->
         
         <a id="topbar-menu-button" href="#" (click)="app.onTopbarMenuButtonClick($event)">
             <i class="material-icons">menu</i>
@@ -26,29 +26,11 @@
                 [ngClass]="{'active-top-menu':app.activeTopbarItem === profile}">
 
                 <a href="#" (click)="app.onTopbarItemClick($event,profile)">                            
-                    <i class="topbar-icon material-icons">settings</i>
+                    <i class="topbar-icon material-icons">person</i>
                     <span class="topbar-item-name">Jane Williams</span>
                 </a>
                 
                 <ul class="ultima-menu animated fadeInDown">
-                    <li role="menuitem">
-                        <a href="#">
-                            <i class="material-icons">person</i>
-                            <span>Profile</span>
-                        </a>
-                    </li>
-                    <li role="menuitem">
-                        <a href="#">
-                            <i class="material-icons">security</i>
-                            <span>Privacy</span>
-                        </a>
-                    </li>
-                    <li role="menuitem">
-                        <a href="#">
-                            <i class="material-icons">settings_applications</i>
-                            <span>Settings</span>
-                        </a>
-                    </li>
                     <li role="menuitem">
                         <a href="#">
                             <i class="material-icons">power_settings_new</i>
