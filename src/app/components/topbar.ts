@@ -7,6 +7,6 @@ import {AppComponent} from '../app';
 })
 export class AppTopBar {
 
-    constructor(@Inject(forwardRef(() => AppComponent)) public app:AppComponent) {}
+    constructor(public app:AppComponent) {}
 
 }

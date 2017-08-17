@@ -77,6 +77,7 @@ import {AppComponent}  from './app';
 import {AppMenuComponent,AppSubMenu}  from './components/menu';
 import {AppTopBar}  from './components/topbar';
 import {AppFooter}  from './components/footer';
+import {AppRightPanel}  from './components/rightpanel';
 import {InlineProfileComponent}  from './components/profile';
 
 // app specifics
@@ -172,6 +173,7 @@ import {ChooseLocationComponent}  from './components/chooselocation';
         AppSubMenu,
         AppTopBar,
         AppFooter,
+        AppRightPanel,
         InlineProfileComponent,
         // my components
         MainComponent,
