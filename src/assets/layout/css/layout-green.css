@@ -1860,9 +1860,18 @@ body .layout-wrapper.layout-compact {
 div.prototype_stamp {
     background: url("../images/prototype.png") no-repeat;
     background-size: 100%;
-    width: 170px;
-    height: 96px;
-    position: fixed;
-    top: 85px;
-    left: 20px;
-}
+    position: fixed;}
+  .landing-body div.prototype_stamp {
+      width: 170px;
+      height: 96px;
+      top: 85px;
+      left: 20px;}
+  .topbar div.prototype_stamp {
+      left: 250px;
+      top: 0px;
+      width: 120px;
+      height: 68px;}
+  @media (max-width: 1024px) {
+    .topbar div.prototype_stamp {
+      left: 200px;}
+  }
