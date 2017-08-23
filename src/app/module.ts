@@ -80,8 +80,18 @@ import {AppFooter}  from './components/footer';
 import {AppRightPanel}  from './components/rightpanel';
 import {InlineProfileComponent}  from './components/profile';
 
+import { ConfirmationService } from 'primeng/primeng';
+
 // app specifics
 import { AgmCoreModule } from '@agm/core';
+import { LocalStorageModule } from 'angular-2-local-storage';
+
+// my services
+import { AuthGuard } from './services/authguard.service';
+import { AppService } from './services/app.service';
+import { LoginService }  from './services/login.service';
+import { AuthHttp }  from './services/authhttp.service';
+import { AssetsService }  from './services/api/assets.service';
 
 // my components
 import {MainComponent}  from './pages/main';
@@ -161,6 +171,7 @@ import {ChooseLocationComponent}  from './components/chooselocation';
         TreeModule,
         TreeTableModule,
         // app specifics
+        LocalStorageModule.withConfig({ prefix: 'myevride', storageType: 'sessionStorage' }),
         AgmCoreModule.forRoot({
             apiKey: "AIzaSyD6MbJyWWmRUR9ZcfyDsMl5gNAW-MOHW0A", // for my-ev-ride, unrestricted
             libraries: ["places"]
@@ -182,6 +193,9 @@ import {ChooseLocationComponent}  from './components/chooselocation';
     ],
     providers: [
 //        {provide: LocationStrategy, useClass: HashLocationStrategy}
+    AuthGuard, AppService, LoginService, AuthHttp,
+    /* API     */ AssetsService,
+    /* PrimeNG */ ConfirmationService
     ],
     bootstrap:[AppComponent]
 })

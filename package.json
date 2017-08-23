@@ -4,12 +4,12 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "http-server ./dist",
     "build": "ng build --prod --env=prod --base-href=/app/ --sm=false --aot=true --output-path=dist/app && mv ./dist/app/landing.html ./dist/index.html",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "startprod": "http-server ./dist"
+    "develop": "ng serve"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +23,8 @@
     "@angular/platform-browser": "^4.2.0",
     "@angular/platform-browser-dynamic": "^4.2.0",
     "@angular/router": "^4.2.0",
+    "angular-2-local-storage": "^1.0.1",
+    "angular2-jwt": "^0.2.3",
     "core-js": "^2.4.1",
     "intl": "^1.2.5",
     "jquery": "^3.1.1",

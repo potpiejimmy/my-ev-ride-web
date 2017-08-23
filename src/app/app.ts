@@ -1,4 +1,5 @@
 import {Component,AfterViewInit,ElementRef,Renderer,ViewChild} from '@angular/core';
+import {AppService} from './services/app.service';
 
 enum MenuOrientation {
     STATIC,
@@ -56,7 +57,7 @@ export class AppComponent implements AfterViewInit {
 
     @ViewChild('layoutMenuScroller') layoutMenuScrollerViewChild: ElementRef;
 
-    constructor(public renderer: Renderer) {}
+    constructor(public renderer: Renderer, public app: AppService) {}
 
     ngAfterViewInit() {
         this.layoutContainer = <HTMLDivElement> this.layourContainerViewChild.nativeElement;

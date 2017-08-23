@@ -2,7 +2,7 @@
     <div class="ui-g-12 ui-lg-9">
         <div class="card card-w-title">
             <h1>Browse available cars near you</h1>
-            <p-dataTable [value]="bookings" [responsive]="true">
+            <p-dataTable [value]="cars" [responsive]="true">
                 <p-column field="distance" header="Distance" [style]="{'width':'80px'}"></p-column>
                 <p-column [style]="{'width':'132px'}">
                     <ng-template let-row="rowData" pTemplate="body">
@@ -11,11 +11,11 @@
                 </p-column>
                 <p-column field="make" header="Make"></p-column>
                 <p-column field="model" header="Model"></p-column>
-                <p-column field="info" header="Owners" [style]="{'width':'80px'}"></p-column>
+                <p-column field="sharecount" header="Owners" [style]="{'width':'80px'}"></p-column>
                 <p-column field="value" header="Value" [style]="{'text-align':'right'}"></p-column>
                 <p-column header="Your price" [style]="{'text-align':'right'}">
                     <ng-template let-row="rowData" pTemplate="body">
-                      <b>{{row.yourprice}}</b>
+                      <b>{{row.value/row.sharecount}}</b>
                     </ng-template>
                 </p-column>
             </p-dataTable>
