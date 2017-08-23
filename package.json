@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href=/app/ --sm=false --aot=true --output-path=dist/app && mv ./dist/app/landing.html ./dist/index.html",
+    "build": "ng build --prod --env=prod --base-href=/app/ --sm=false --aot=true --output-path=dist/app && mv ./dist/app/landing.html ./dist/index.html",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
