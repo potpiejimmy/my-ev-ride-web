@@ -13,4 +13,8 @@ export class AssetsService {
     getCars(): Promise<any> {
         return this.http.get(environment.apiUrl+'cars');
     }
+
+    saveCar(car: any): Promise<any> {
+        return this.http.post(environment.apiUrl+'assets', car);
+    }
 }
