@@ -12,10 +12,14 @@
                 <p-column field="make" header="Make"></p-column>
                 <p-column field="model" header="Model"></p-column>
                 <p-column field="sharecount" header="Owners" [style]="{'width':'80px'}"></p-column>
-                <p-column field="value" header="Value" [style]="{'text-align':'right'}"></p-column>
+                <p-column header="Value" [style]="{'text-align':'right'}">
+                    <ng-template let-row="rowData" pTemplate="body">
+                        {{priceFormatted(row.value, row.currency)}}
+                      </ng-template>
+                  </p-column>
                 <p-column header="Your price" [style]="{'text-align':'right'}">
                     <ng-template let-row="rowData" pTemplate="body">
-                      <b>{{row.value/row.sharecount}}</b>
+                      <b>{{priceFormatted(row.value/row.sharecount, row.currency)}}</b>
                     </ng-template>
                 </p-column>
             </p-dataTable>

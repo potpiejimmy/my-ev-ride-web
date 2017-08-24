@@ -21,4 +21,11 @@ export class MainComponent implements AfterViewInit {
   refresh() {
     this.assetsService.getCars().then(c => this.cars = c);
   }
+
+  priceFormatted(value: number, currency: string): string {
+    return value.toLocaleString([], {
+      style: 'currency',
+      currency: currency,
+    })
+  }
 }
