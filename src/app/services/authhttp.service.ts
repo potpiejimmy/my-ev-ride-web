@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { LoginService } from './login.service';
 import { AuthGuard } from './authguard.service';
 import { AppService } from './app.service';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthHttp {
@@ -65,6 +66,7 @@ export class AuthHttp {
 
     private handleError(error: any, me: any): Promise<any> {
         console.error('An error occurred', JSON.stringify(error.json())); // XXX for debugging purposes
+        if (!error.status) error.message = "Sorry, " + environment.apiUrl + " cannot be reached.";
         me.app.setMessage("Error", error.json().message || error.message || error);
         if (error.status == 401) me.relogin(); // not authorized, go to login
         return Promise.reject(error.message || error);
