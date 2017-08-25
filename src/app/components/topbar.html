@@ -25,9 +25,9 @@
             <li #profile class="profile-item" *ngIf="(app.profileMode==='top'||app.isHorizontal())&&app.app.loginService.isLoggedIn"
                 [ngClass]="{'active-top-menu':app.activeTopbarItem === profile}">
 
-                <a href="#" (click)="app.onTopbarItemClick($event,profile)">                            
+                <a href="#" (click)="app.onTopbarItemClick($event,profile)" [title]="app.app.loginService.loginToken.name">
                     <i class="topbar-icon material-icons">person</i>
-                    <span class="topbar-item-name">Jane Williams</span>
+                    <span class="topbar-item-name">{{app.app.loginService.loginToken.name}}</span>
                 </a>
                 
                 <ul class="ultima-menu animated fadeInDown">
