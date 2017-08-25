@@ -95,6 +95,7 @@ import { AssetsService }  from './services/api/assets.service';
 
 // my components
 import {MainComponent}  from './pages/main';
+import {LoginComponent}  from './pages/login';
 import {NewCarComponent}  from './pages/newcar';
 import {ChooseLocationComponent}  from './components/chooselocation';
 
@@ -188,6 +189,7 @@ import {ChooseLocationComponent}  from './components/chooselocation';
         InlineProfileComponent,
         // my components
         MainComponent,
+        LoginComponent,
         NewCarComponent,
         ChooseLocationComponent
     ],

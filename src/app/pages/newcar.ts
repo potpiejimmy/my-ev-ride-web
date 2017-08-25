@@ -6,7 +6,10 @@ import { AssetsService } from '../services/api/assets.service';
   templateUrl: 'newcar.html'
 })
 export class NewCarComponent {
-  car: any = {};
+  car: any = {
+    lat: 0, lon: 0,
+    currency: 'EUR'
+  };
 
   images = [
     {label:'<Choose Image>', value:''},

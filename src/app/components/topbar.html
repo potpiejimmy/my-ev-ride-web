@@ -22,7 +22,7 @@
             <i class="material-icons">menu</i>
         </a>
         <ul class="topbar-items animated fadeInDown" [ngClass]="{'topbar-items-visible': app.topbarMenuActive}">
-            <li #profile class="profile-item" *ngIf="app.profileMode==='top'||app.isHorizontal()"
+            <li #profile class="profile-item" *ngIf="(app.profileMode==='top'||app.isHorizontal())&&app.app.loginService.isLoggedIn"
                 [ngClass]="{'active-top-menu':app.activeTopbarItem === profile}">
 
                 <a href="#" (click)="app.onTopbarItemClick($event,profile)">                            
@@ -32,7 +32,7 @@
                 
                 <ul class="ultima-menu animated fadeInDown">
                     <li role="menuitem">
-                        <a href="#">
+                        <a [routerLink]="['/']" (click)="app.app.logout()">
                             <i class="material-icons">power_settings_new</i>
                             <span>Logout</span>
                         </a>

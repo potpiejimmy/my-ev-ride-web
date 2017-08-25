@@ -22,10 +22,10 @@ export class AppMenuComponent implements OnInit {
     ngOnInit() {
         this.model = [
             {
-                label: 'Browse', icon: 'pageview', routerLink: ['/']
+                label: 'Find', icon: 'pageview', routerLink: ['/']
             },
             {
-                label: 'New car', icon: 'create', routerLink: ['/new']
+                label: 'My cars', icon: 'create', routerLink: ['/new']
             }
         ];
     }

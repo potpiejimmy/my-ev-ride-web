@@ -6,6 +6,8 @@ import 'rxjs/add/operator/toPromise';
 import { JwtHelper } from 'angular2-jwt';
 import { LocalStorageService } from 'angular-2-local-storage';
 
+import { environment } from '../../environments/environment';
+
 @Injectable()
 export class LoginService {
   
@@ -15,8 +17,6 @@ export class LoginService {
 
   // store the URL so we can redirect after logging in
   redirectUrl: string;
-
-  private loginServiceUrl = '/pt2/api/login';  // URL to web api
 
   private jwtHelper: JwtHelper = new JwtHelper();
 
@@ -32,7 +32,7 @@ export class LoginService {
   }
 
   login(user, password): Promise<boolean> {
-    return this.http.post(this.loginServiceUrl, {"user":user, "password":password})
+    return this.http.post(environment.apiUrl+"login", {"user":user, "password":password})
         .toPromise()
         .then(result => {
           let resJson = result.json();

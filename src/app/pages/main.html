@@ -6,7 +6,7 @@
                 <p-column field="distance" header="Distance" [style]="{'width':'80px'}"></p-column>
                 <p-column [style]="{'width':'132px'}">
                     <ng-template let-row="rowData" pTemplate="body">
-                      <img [src]="row.image" />
+                      <img src="assets/layout/images/cars/{{row.image}}.png" />
                     </ng-template>
                 </p-column>
                 <p-column field="make" header="Make"></p-column>
