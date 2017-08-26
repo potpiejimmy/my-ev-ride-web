@@ -1,26 +1,31 @@
-<form id="loginform" (ngSubmit)="login()">
-
-    <div class="ui-g ui-fluid">
-        <div class="ui-g-12 ui-md-6 ui-lg-4">
-            <div class="card">
-                    <div style="margin: 1.5em 0.5em;">
-                            <span class="md-inputfield">
-                            <input #nameInputField type="text" name="user" pInputText [(ngModel)]="user" size="48" required/>
-                            <label>User name</label>
-                        </span>
-                    </div>
-                    <div style="margin: 1.5em 0.5em;">
-                            <span class="md-inputfield">
-                            <input type="password" name="password" pInputText [(ngModel)]="password" size="48" required/>
-                            <label>Password</label>
-                        </span>
-                    </div>
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-6 ui-lg-4">
+        <div class="card">
+            <form id="loginform" (ngSubmit)="login()">
+                <div style="margin: 1.5em 0.5em;">
+                    <span class="md-inputfield">
+                        <input #nameInputField type="text" name="user" pInputText [(ngModel)]="user" size="48" required/>
+                        <label>User name</label>
+                    </span>
+                </div>
+                <div style="margin: 1.5em 0.5em;">
+                        <span class="md-inputfield">
+                        <input type="password" name="password" pInputText [(ngModel)]="password" size="48" required/>
+                        <label>Password</label>
+                    </span>
+                </div>
             
                 <div style="margin: 1.5em 0.5em;">
                     <button pButton type="submit" label="Sign In" icon="ui-icon-person"></button>
-                </div>
+                </div>    
+            </form>
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-6 ui-lg-4">
+        <div class="card">
+            <div style="margin: 1.5em 0.5em;">
+                <button pButton type="button" label="Sign In With Google" icon="ui-icon-person" (click)="loginGoogle()"></button>
             </div>
         </div>
     </div>
-    
-</form>
+</div>

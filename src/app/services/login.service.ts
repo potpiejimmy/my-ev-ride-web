@@ -16,7 +16,13 @@ export class LoginService {
   loginTokenEncoded: any;
 
   // store the URL so we can redirect after logging in
-  redirectUrl: string;
+  get redirectUrl(): any {
+    return this.localStorageService.get('redirectUrl');
+  }
+
+  set redirectUrl(redirectUrl: any) {
+    this.localStorageService.set('redirectUrl', redirectUrl);
+  }
 
   private jwtHelper: JwtHelper = new JwtHelper();
 
@@ -33,14 +39,20 @@ export class LoginService {
 
   login(user, password): Promise<boolean> {
     return this.http.post(environment.apiUrl+"login", {"user":user, "password":password})
-        .toPromise()
-        .then(result => {
-          let resJson = result.json();
-          let token = resJson.token;
-          if (!token) return false;
-          this.localStorageService.set('token', token);
-          return this.readToken();
-        });
+        .toPromise().then(result => this.onLoginResult(result));
+  }
+
+  autoLogin(): Promise<boolean> {
+    return this.http.get(environment.apiUrl+"login", { withCredentials: true })
+        .toPromise().then(result => this.onLoginResult(result));
+  }
+
+  onLoginResult(result: any) {
+    let resJson = result.json();
+    let token = resJson.token;
+    if (!token) return false;
+    this.localStorageService.set('token', token);
+    return this.readToken();
   }
 
   logout(): void {
