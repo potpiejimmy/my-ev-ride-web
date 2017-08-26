@@ -1,6 +1,6 @@
 <div class="ui-inputgroup">
     <span class="ui-inputgroup-addon"><i class="material-icons">location_on</i></span>
-    <input pInputText placeholder="Enter street name, city" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" size="50" class="form-control" #search [formControl]="searchControl">
+    <input pInputText placeholder="Enter street name, city" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" size="50" class="form-control" #search [formControl]="searchControl" [(ngModel)]="formattedAddressInput">
 </div>
 <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
     <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>

@@ -12,6 +12,7 @@
                         </p-column>
                         <p-column field="make" header="Make"></p-column>
                         <p-column field="model" header="Model"></p-column>
+                        <p-column field="location" header="Location"></p-column>
                         <p-column field="sharecount" header="Owners" [style]="{'width':'80px'}"></p-column>
                         <p-column header="Value" [style]="{'text-align':'right'}">
                             <ng-template let-row="rowData" pTemplate="body">
@@ -42,7 +43,6 @@
                         <input type="text" pInputText placeholder="Model" [(ngModel)]="car.model">
                     </div>
                 </div>
-                
                 <div class="ui-g-12 ui-md-4">
                 </div>
 
@@ -58,7 +58,6 @@
                         </p-dropdown>
                     </div>
                 </div>
-
                 <div class="ui-g-12 ui-md-6">
                 </div>
     
@@ -68,10 +67,15 @@
                 <div class="ui-g-12 ui-md-2">
                     <p-spinner [(ngModel)]="car.sharecount" placeholder="Owners"></p-spinner>
                 </div>
-
                 <div class="ui-g-12 ui-md-4">
                 </div>
 
+                <div class="ui-g-12 ui-md-8">
+                    <choose-location #carlocation [latitude]="car.lat" [longitude]="car.lon" [formattedAddressInput]="car.location"></choose-location>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                </div>
+    
                 <div class="ui-g-12 ui-md-2">
                     <button pButton type="button" (click)="save()" label="Save"></button>
                 </div>
@@ -81,7 +85,9 @@
                 <div class="ui-g-12 ui-md-2" *ngIf="car.id">
                     <button pButton type="button" class="secondary" (click)="delete()" label="Delete this car"></button>
                 </div>
-                    
+                <div class="ui-g-12 ui-md-6">
+                </div>
+                        
             </div>
         </div>
     </div>

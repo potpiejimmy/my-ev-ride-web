@@ -1,7 +1,8 @@
-import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, NgZone, OnInit, ViewChild, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
+import { LocalStorageService } from 'angular-2-local-storage';
 
 @Component({
     selector: 'choose-location',
@@ -16,30 +17,30 @@ import { MapsAPILoader } from '@agm/core';
     templateUrl: 'chooselocation.html'
   })
   export class ChooseLocationComponent implements OnInit {
-    public latitude: number;
-    public longitude: number;
-    public searchControl: FormControl;
+
+    @Input() public latitude: number;
+    @Input() public longitude: number;
+    @Input() public formattedAddressInput: string;
     public zoom: number;
+    
+    public searchControl: FormControl;
   
     @ViewChild("search")
     public searchElementRef: ElementRef;
   
     constructor(
       private mapsAPILoader: MapsAPILoader,
-      private ngZone: NgZone
+      private ngZone: NgZone,
+      private localStorageService: LocalStorageService      
     ) {}
   
     ngOnInit() {
-      //set google maps defaults
-      this.zoom = 4;
-      this.latitude = 39.8282;
-      this.longitude = -98.5795;
-  
+      this.zoom = 12;
+
+      if (!this.latitude && !this.longitude) this.initDefaultPosition();
+
       //create search FormControl
       this.searchControl = new FormControl();
-  
-      //set current position
-      this.setCurrentPosition();
   
       //load Places Autocomplete
       this.mapsAPILoader.load().then(() => {
@@ -56,16 +57,42 @@ import { MapsAPILoader } from '@agm/core';
               return;
             }
   
-            //set latitude, longitude and zoom
-            this.latitude = place.geometry.location.lat();
-            this.longitude = place.geometry.location.lng();
-            this.zoom = 12;
+            this.lastSavedPlace = {
+              latitude: place.geometry.location.lat(),
+              longitude: place.geometry.location.lng(),
+              formatted_address: place.formatted_address
+            }
+            this.applyPlaceToMap();
           });
         });
       });
     }
+
+    private initDefaultPosition() {
+      //set google maps defaults
+      this.zoom = 4;
+      this.latitude = 39.8282;
+      this.longitude = -98.5795;
   
-    private setCurrentPosition() {
+      let place = this.lastSavedPlace;
+      if (place) {
+        this.applyPlaceToMap();
+      } else {
+        //set current browser location position
+        this.setAutoPosition();
+      }
+    }
+
+    private applyPlaceToMap() {
+        let place = this.lastSavedPlace;
+        //set latitude, longitude and zoom
+        this.formattedAddressInput = place.formatted_address;
+        this.latitude = place.latitude;
+        this.longitude = place.longitude;
+        this.zoom = 12;
+    }
+  
+    private setAutoPosition() {
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition((position) => {
           this.latitude = position.coords.latitude;
@@ -73,5 +100,13 @@ import { MapsAPILoader } from '@agm/core';
           this.zoom = 12;
         });
       }
+    }
+
+    set lastSavedPlace(place: any) {
+      this.localStorageService.set("currentPlace", place);
+    }
+
+    get lastSavedPlace(): any {
+      return this.localStorageService.get("currentPlace");
     }
 }

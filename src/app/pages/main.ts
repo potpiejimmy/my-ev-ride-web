@@ -1,12 +1,17 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AssetsService } from '../services/api/assets.service';
 import { AppService } from '../services/app.service';
+import { ChooseLocationComponent } from '../components/chooselocation';
 
 @Component({
   selector: 'main',
   templateUrl: 'main.html'
 })
-export class MainComponent implements AfterViewInit {
+export class MainComponent {
+
+  @ViewChild("yourlocation")
+  public yourLocation: ChooseLocationComponent;
+
   cars = [];
   
   constructor(public app: AppService, private assetsService: AssetsService) {
@@ -14,9 +19,6 @@ export class MainComponent implements AfterViewInit {
 
   ngOnInit() {
     this.refresh();
-  }
-
-  ngAfterViewInit() {
   }
 
   refresh() {

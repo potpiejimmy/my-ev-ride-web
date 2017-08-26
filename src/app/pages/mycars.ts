@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AssetsService } from '../services/api/assets.service';
 import { AppService } from '../services/app.service';
+import { ChooseLocationComponent } from '../components/chooselocation';
 
 @Component({
   selector: 'my-cars',
   templateUrl: 'mycars.html'
 })
 export class MyCarsComponent {
+
+  @ViewChild("carlocation")
+  public carLocation: ChooseLocationComponent;
+
   mycars = [];
 
   car: any = null;
@@ -30,12 +35,14 @@ export class MyCarsComponent {
 
   newCar() {
     this.car = {
-      lat: 0, lon: 0,
       currency: 'EUR'
     };
   }
 
   save() {
+    this.car.lat = this.carLocation.latitude;
+    this.car.lon = this.carLocation.longitude;
+    this.car.location = this.carLocation.formattedAddressInput;
     this.assetsService.saveCar(this.car).then(() => {
       this.cancel();
     });
