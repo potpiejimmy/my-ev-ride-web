@@ -67,8 +67,8 @@ export class AuthHttp {
     private handleError(error: any, me: any): Promise<any> {
         console.error('An error occurred', JSON.stringify(error.json())); // XXX for debugging purposes
         if (!error.status) error.message = "Sorry, " + environment.apiUrl + " cannot be reached.";
-        me.app.setMessage("Error", error.json().message || error.message || error);
         if (error.status == 401) me.relogin(); // not authorized, go to login
+        else me.app.setMessage("Error", error.json().message || error.message || error);
         return Promise.reject(error.message || error);
     }
 }

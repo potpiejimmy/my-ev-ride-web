@@ -172,7 +172,7 @@ import {ChooseLocationComponent}  from './components/chooselocation';
         TreeModule,
         TreeTableModule,
         // app specifics
-        LocalStorageModule.withConfig({ prefix: 'myevride', storageType: 'sessionStorage' }),
+        LocalStorageModule.withConfig({ prefix: 'myevride', storageType: 'localStorage' }), // or sessionStorage
         AgmCoreModule.forRoot({
             apiKey: "AIzaSyD6MbJyWWmRUR9ZcfyDsMl5gNAW-MOHW0A", // for my-ev-ride, unrestricted
             libraries: ["places"]
