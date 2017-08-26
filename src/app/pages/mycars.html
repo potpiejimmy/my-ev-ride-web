@@ -1,0 +1,88 @@
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12" *ngIf="!car">
+        <div class="card card-w-title">
+            <h1>Your cars</h1>
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-12">
+                    <p-dataTable [value]="mycars" [responsive]="true" selectionMode="single" [(selection)]="car">
+                        <p-column [style]="{'width':'132px'}">
+                            <ng-template let-row="rowData" pTemplate="body">
+                                <img src="assets/layout/images/cars/{{row.image}}.png" />
+                            </ng-template>
+                        </p-column>
+                        <p-column field="make" header="Make"></p-column>
+                        <p-column field="model" header="Model"></p-column>
+                        <p-column field="sharecount" header="Owners" [style]="{'width':'80px'}"></p-column>
+                        <p-column header="Value" [style]="{'text-align':'right'}">
+                            <ng-template let-row="rowData" pTemplate="body">
+                                {{app.priceFormatted(row.value, row.currency)}}
+                            </ng-template>
+                        </p-column>
+                        <p-column header="Your price" [style]="{'text-align':'right'}">
+                            <ng-template let-row="rowData" pTemplate="body">
+                                <b>{{app.priceFormatted(row.value/row.sharecount, row.currency)}}</b>
+                            </ng-template>
+                        </p-column>
+                    </p-dataTable>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-2">
+                    <button pButton type="button" (click)="newCar()" label="New car"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui-g-12" *ngIf="car">
+        <div class="card card-w-title">
+            <h1>Edit your dream EV</h1>
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-12 ui-md-8">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="material-icons">directions_car</i></span>
+                        <input type="text" pInputText placeholder="Make" [(ngModel)]="car.make">
+                        <input type="text" pInputText placeholder="Model" [(ngModel)]="car.model">
+                    </div>
+                </div>
+                
+                <div class="ui-g-12 ui-md-4">
+                </div>
+
+                <div class="ui-g-12 ui-md-6">
+                    <div *ngIf="car.image">
+                        <img src="assets/layout/images/cars/{{car.image}}.png"/>
+                    </div>
+                    <div>
+                        <p-dropdown [options]="images" [(ngModel)]="car.image">
+                            <ng-template let-image pTemplate="item">
+                                <img *ngIf="image.value" src="assets/layout/images/cars/{{image.value}}.png"/>
+                            </ng-template>
+                        </p-dropdown>
+                    </div>
+                </div>
+
+                <div class="ui-g-12 ui-md-6">
+                </div>
+    
+                <div class="ui-g-12 ui-md-6">
+                    <p-spinner [(ngModel)]="car.value" placeholder="Price"></p-spinner>
+                </div>
+                <div class="ui-g-12 ui-md-2">
+                    <p-spinner [(ngModel)]="car.sharecount" placeholder="Owners"></p-spinner>
+                </div>
+
+                <div class="ui-g-12 ui-md-4">
+                </div>
+
+                <div class="ui-g-12 ui-md-2">
+                    <button pButton type="button" (click)="save()" label="Save"></button>
+                </div>
+                <div class="ui-g-12 ui-md-2">
+                    <button pButton type="button" (click)="cancel()" label="Cancel"></button>
+                </div>
+                <div class="ui-g-12 ui-md-2" *ngIf="car.id">
+                    <button pButton type="button" class="secondary" (click)="delete()" label="Delete this car"></button>
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+</div>

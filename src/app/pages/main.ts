@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { AssetsService } from '../services/api/assets.service';
+import { AppService } from '../services/app.service';
 
 @Component({
   selector: 'main',
@@ -8,7 +9,7 @@ import { AssetsService } from '../services/api/assets.service';
 export class MainComponent implements AfterViewInit {
   cars = [];
   
-  constructor(private assetsService: AssetsService) {
+  constructor(public app: AppService, private assetsService: AssetsService) {
   }
 
   ngOnInit() {
@@ -20,12 +21,5 @@ export class MainComponent implements AfterViewInit {
 
   refresh() {
     this.assetsService.getCars().then(c => this.cars = c);
-  }
-
-  priceFormatted(value: number, currency: string): string {
-    return value.toLocaleString([], {
-      style: 'currency',
-      currency: currency,
-    })
   }
 }

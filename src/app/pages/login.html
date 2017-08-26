@@ -1,7 +1,16 @@
 <div class="ui-g ui-fluid">
+    <div class="ui-g-12">
+        <div class="card card-w-title">
+            <h1>Login</h1>
+            Please sign in using one of the methods below
+        </div>
+    </div>
     <div class="ui-g-12 ui-md-6 ui-lg-4">
         <div class="card">
             <form id="loginform" (ngSubmit)="login()">
+                <div style="margin: 0em 0.5em 3em 0.5em;">
+                    <h3>Login with my-ev-ride</h3>
+                </div>
                 <div style="margin: 1.5em 0.5em;">
                     <span class="md-inputfield">
                         <input #nameInputField type="text" name="user" pInputText [(ngModel)]="user" size="48" required/>
@@ -23,8 +32,11 @@
     </div>
     <div class="ui-g-12 ui-md-6 ui-lg-4">
         <div class="card">
+            <div style="margin: 0em 0.5em 7.8em 0.5em;">
+                <h3>Login with your Google account</h3>
+            </div>
             <div style="margin: 1.5em 0.5em;">
-                <button pButton type="button" label="Sign In With Google" icon="ui-icon-person" (click)="loginGoogle()"></button>
+                <button id="google_signin" (click)="loginGoogle()"></button>
             </div>
         </div>
     </div>

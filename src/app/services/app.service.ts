@@ -27,4 +27,12 @@ export class AppService {
         this.clearMessages();
     }
 
+    // -- specifics
+
+    priceFormatted(value: number, currency: string): string {
+        return value.toLocaleString([], {
+            style: 'currency',
+            currency: currency,
+        })
+    }
 }

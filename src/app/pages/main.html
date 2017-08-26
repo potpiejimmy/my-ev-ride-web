@@ -14,12 +14,12 @@
                 <p-column field="sharecount" header="Owners" [style]="{'width':'80px'}"></p-column>
                 <p-column header="Value" [style]="{'text-align':'right'}">
                     <ng-template let-row="rowData" pTemplate="body">
-                        {{priceFormatted(row.value, row.currency)}}
-                      </ng-template>
-                  </p-column>
+                        {{app.priceFormatted(row.value, row.currency)}}
+                    </ng-template>
+                </p-column>
                 <p-column header="Your price" [style]="{'text-align':'right'}">
                     <ng-template let-row="rowData" pTemplate="body">
-                      <b>{{priceFormatted(row.value/row.sharecount, row.currency)}}</b>
+                      <b>{{app.priceFormatted(row.value/row.sharecount, row.currency)}}</b>
                     </ng-template>
                 </p-column>
             </p-dataTable>
