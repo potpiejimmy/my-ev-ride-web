@@ -65,6 +65,13 @@ import { LocalStorageService } from 'angular-2-local-storage';
             this.applyPlaceToMap();
           });
         });
+
+        // prevent enter form submit
+        google.maps.event.addDomListener(this.searchElementRef.nativeElement, 'keydown', function(event) { 
+          if (event.keyCode === 13) { 
+              event.preventDefault(); 
+          }
+        }); 
       });
     }
 

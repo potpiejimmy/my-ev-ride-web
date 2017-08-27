@@ -13,6 +13,7 @@ export class MainComponent {
   public yourLocation: ChooseLocationComponent;
 
   cars = [];
+  expandedRows = [];
   
   constructor(public app: AppService, private assetsService: AssetsService) {
   }
@@ -23,5 +24,10 @@ export class MainComponent {
 
   refresh() {
     this.assetsService.getCars().then(c => this.cars = c);
+  }
+
+  onRowSelected(event: any) {
+    this.expandedRows.pop();
+    this.expandedRows.push(event.data);
   }
 }

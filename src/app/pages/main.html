@@ -2,7 +2,7 @@
     <div class="ui-g-12 ui-lg-9">
         <div class="card card-w-title">
             <h1>Available cars near you</h1>
-            <p-dataTable [value]="cars" [responsive]="true">
+            <p-dataTable #carsTable [value]="cars" [responsive]="true" selectionMode="single" expandableRows="true" [expandedRows]="expandedRows" (onRowSelect)="onRowSelected($event)">
                 <p-column field="distance" header="Distance" [style]="{'width':'80px'}"></p-column>
                 <p-column [style]="{'width':'132px'}">
                     <ng-template let-row="rowData" pTemplate="body">
@@ -22,6 +22,15 @@
                       <b>{{app.priceFormatted(row.value/row.sharecount, row.currency)}}</b>
                     </ng-template>
                 </p-column>
+                <ng-template let-row pTemplate="rowexpansion">
+                    <div class="ui-grid ui-grid-responsive ui-fluid">
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-12">
+                                Location: {{row.location}}
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
             </p-dataTable>
         </div>
     </div>
