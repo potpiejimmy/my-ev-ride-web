@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
             this.router.navigate([redirect]);
             this.app.setMessage('Login successful', 'You are now logged in as ' + this.loginService.loginToken.name, 'info');
         } else {
-            this.app.setMessage('Login failed', 'Unknown user or wrong password.');
+            this.app.setMessage('Login failed', 'Bad user name or password.');
         }
     }
 }
