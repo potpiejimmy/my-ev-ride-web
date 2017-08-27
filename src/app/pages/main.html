@@ -12,21 +12,30 @@
                 <p-column field="make" header="Make"></p-column>
                 <p-column field="model" header="Model"></p-column>
                 <p-column field="sharecount" header="No. of Owners" [style]="{'width':'80px'}"></p-column>
-                <p-column header="Value" [style]="{'text-align':'right'}">
-                    <ng-template let-row="rowData" pTemplate="body">
-                        {{app.priceFormatted(row.value, row.currency)}}
-                    </ng-template>
-                </p-column>
                 <p-column header="Your price" [style]="{'text-align':'right'}">
                     <ng-template let-row="rowData" pTemplate="body">
                       <b>{{app.priceFormatted(row.value/row.sharecount, row.currency)}}</b>
                     </ng-template>
                 </p-column>
                 <ng-template let-row pTemplate="rowexpansion">
-                    <div class="ui-grid ui-grid-responsive ui-fluid">
-                        <div class="ui-grid-row">
-                            <div class="ui-grid-col-12">
-                                Location: {{row.location}}
+                    <div class="ui-g ui-fluid">
+                        <div class="ui-g-12 ui-md-6 ui-lg-8" style="text-align: center">
+                            <p>
+                                <img src="assets/layout/images/cars/{{row.image}}.png" width="100%" style="max-width: 400px"/>
+                            </p>
+                            <span><i class="material-icons">location_on</i>{{row.location}}</span>
+                            <p style="white-space:pre-wrap;">{{row.infotext}}</p>
+                            <p>
+                                <b>{{app.priceFormatted(row.value, row.currency)}}</b><br>
+                            </p>
+                        </div>
+                        <div class="ui-g-12 ui-md-6 ui-lg-4">
+                            <div class="card" style="height: 100%;">
+                                <i class="material-icons">person</i>
+                                <p style="white-space:pre-wrap;">"{{row.teasertext}}"</p>
+                                <p><button pButton type="button" (click)="dummy()" label="Contact"></button></p>
+                                <p><button pButton type="button" (click)="dummy()" label="Add to watch list"></button></p>
+                                <p><button pButton class="secondary" type="button" (click)="dummy()" label="Request Co-Ownership"></button></p>
                             </div>
                         </div>
                     </div>

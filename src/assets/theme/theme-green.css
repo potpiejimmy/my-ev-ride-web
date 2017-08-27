@@ -3377,7 +3377,7 @@ body {
       background-color: #ffeb3b;
       color: #212121; }
       body .ui-button.secondary:enabled:not(:focus):hover, body .ui-datepicker-buttonpane > button.secondary:enabled:not(:focus):hover {
-        background-color: #4527A0; }
+        background-color: #fff06e; }
       body .ui-button.secondary:focus, body .ui-datepicker-buttonpane > button.secondary:focus {
         outline: 0 none;
         background-color: #fff06e; }
