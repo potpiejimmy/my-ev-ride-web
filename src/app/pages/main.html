@@ -4,9 +4,9 @@
             <h1>Available cars near you</h1>
             <p-dataTable #carsTable [value]="cars" [responsive]="true" selectionMode="single" expandableRows="true" [expandedRows]="expandedRows" (onRowSelect)="onRowSelected($event)">
                 <p-column field="distance" header="Distance" [style]="{'width':'80px'}"></p-column>
-                <p-column [style]="{'width':'132px'}">
+                <p-column [style]="{'width':'148px'}">
                     <ng-template let-row="rowData" pTemplate="body">
-                      <img src="assets/layout/images/cars/{{row.image}}.png" />
+                      <img src="assets/layout/images/cars/{{row.image}}_s.png" />
                     </ng-template>
                 </p-column>
                 <p-column field="make" header="Make"></p-column>

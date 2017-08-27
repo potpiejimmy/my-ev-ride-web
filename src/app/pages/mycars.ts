@@ -23,7 +23,18 @@ export class MyCarsComponent {
   images = [
     {label:'<Choose Image>', value:''},
     {label:'i3 White', value:'bmw_i3_white'},
-    {label:'Model 3 White',  value:'tesla_model3_white'}
+    {label:'Model 3 White Aero',  value:'tesla_model3_white_aero'},
+    {label:'Model 3 Black Aero',  value:'tesla_model3_black_aero'},
+    {label:'Model 3 Blue Aero',  value:'tesla_model3_blue_aero'},
+    {label:'Model 3 Signature Red Aero',  value:'tesla_model3_red_aero'},
+    {label:'Model 3 Gray Aero',  value:'tesla_model3_gray_aero'},
+    {label:'Model 3 Midnight Gray Aero',  value:'tesla_model3_midgray_aero'},
+    {label:'Model 3 White 19"',  value:'tesla_model3_white_19'},
+    {label:'Model 3 Black 19"',  value:'tesla_model3_black_19'},
+    {label:'Model 3 Blue 19"',  value:'tesla_model3_blue_19'},
+    {label:'Model 3 Signature Red 19"',  value:'tesla_model3_red_19'},
+    {label:'Model 3 Gray 19"',  value:'tesla_model3_gray_19'},
+    {label:'Model 3 Midnight Gray 19"',  value:'tesla_model3_midgray_19'}
   ]
 
   constructor(public app: AppService,
