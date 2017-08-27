@@ -5,21 +5,21 @@
             Please sign in using one of the methods below
         </div>
     </div>
-    <div class="ui-g-12 ui-md-6 ui-lg-4">
-        <div class="card">
+    <div class="ui-g-12 ui-md-7 ui-lg-4">
+        <div class="card" style="height: 100%;">
             <form id="loginform" (ngSubmit)="login()">
                 <div style="margin: 0em 0.5em 3em 0.5em;">
                     <h3>Login with my-ev-ride</h3>
                 </div>
                 <div style="margin: 1.5em 0.5em;">
                     <span class="md-inputfield">
-                        <input #nameInputField type="text" name="user" pInputText [(ngModel)]="user" size="48" required/>
-                        <label>User name</label>
+                        <input #nameInputField type="text" name="user" pInputText [(ngModel)]="user" required/>
+                        <label>User Name</label>
                     </span>
                 </div>
                 <div style="margin: 1.5em 0.5em;">
                         <span class="md-inputfield">
-                        <input type="password" name="password" pInputText [(ngModel)]="password" size="48" required/>
+                        <input type="password" name="password" pInputText [(ngModel)]="password" required/>
                         <label>Password</label>
                     </span>
                 </div>
@@ -30,13 +30,64 @@
             </form>
         </div>
     </div>
-    <div class="ui-g-12 ui-md-6 ui-lg-4">
-        <div class="card">
+    <div class="ui-g-12 ui-md-7 ui-lg-4">
+        <div class="card" style="height: 100%;">
             <div style="margin: 0em 0.5em 7.8em 0.5em;">
                 <h3>Login with your Google account</h3>
             </div>
             <div style="margin: 1.5em 0.5em;">
                 <button id="google_signin" (click)="loginGoogle()"></button>
+            </div>
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-7 ui-lg-4">
+        <div class="card" style="height: 100%;">
+            <div style="margin: 0em 0.5em 7.8em 0.5em;">
+                <h3>Login with Facebook</h3>
+            </div>
+            <div style="margin: 1.5em 0.5em;">
+                <!--button id="facebook_signin" (click)="loginFacebook()"></button-->
+            </div>
+        </div>
+    </div>
+    <div class="ui-g-12">
+        <div class="card">
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-12 ui-md-7 ui-lg-6">
+                    <form id="registerform" (ngSubmit)="register()">
+                        <div style="margin: 0em 0.5em 3em 0.5em;">
+                            <h3>Or register a new account at my-ev-ride.com</h3>
+                        </div>
+                        <div style="margin: 1.5em 0.5em;">
+                            <span class="md-inputfield">
+                                <input type="text" name="user" pInputText [(ngModel)]="userNew" required/>
+                                <label>New User Name</label>
+                            </span>
+                        </div>
+                        <div style="margin: 1.5em 0.5em;">
+                                <span class="md-inputfield">
+                                <input type="password" name="password" pPassword [(ngModel)]="passwordNew" required/>
+                                <label>New Password</label>
+                            </span>
+                        </div>
+                        <div style="margin: 1.5em 0.5em;">
+                            <span class="md-inputfield">
+                                <input type="password" name="passwordRepeat" pPassword [(ngModel)]="passwordRepeat" required/>
+                                <label>New Password (Repeat)</label>
+                            </span>
+                        </div>
+                        <div style="margin: 1.5em 0.5em;">
+                            <span class="md-inputfield">
+                                <input type="text" name="displayName" pInputText [(ngModel)]="displayName"/>
+                                <label>Your full name (optional)</label>
+                            </span>
+                        </div>
+                        <div style="margin: 1.5em 0.5em;">
+                            <button pButton type="submit" label="Register" icon="ui-icon-person"></button>
+                        </div>
+                        <p-messages [value]="messages"></p-messages>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

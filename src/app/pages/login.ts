@@ -14,6 +14,11 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
     user: string;
     password: string;
+    userNew: string;
+    passwordNew: string;
+    passwordRepeat: string;
+    displayName: string;
+    messages = [];
 
     constructor(
         public app: AppService,
@@ -35,6 +40,17 @@ export class LoginComponent implements OnInit, AfterViewInit {
     login() {
         this.app.clearMessages();
         this.loginService.login(this.user, this.password).then(result => this.onLoginCompleted(result));
+    }
+
+    register() {
+        if (!this.userNew || this.userNew.length < 8) {this.messages = [{detail:"User name must be at least 8 characters long"}];return;}
+        if (!this.passwordNew || this.passwordNew.length < 8) {this.messages = [{detail:"Password must be at least 8 characters long"}];return;}
+        if (this.passwordNew !== this.passwordRepeat) {this.messages = [{detail:"The passwords do not match"}];return;}
+        this.loginService.register({
+            name: this.userNew,
+            password: this.passwordNew,
+            display_name: this.displayName
+        }).then(result => this.onLoginCompleted(result));
     }
 
     loginGoogle() {

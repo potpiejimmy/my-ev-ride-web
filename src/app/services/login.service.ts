@@ -42,6 +42,11 @@ export class LoginService {
         .toPromise().then(result => this.onLoginResult(result));
   }
 
+  register(user): Promise<boolean> {
+    return this.http.post(environment.apiUrl+"login/register", user)
+        .toPromise().then(result => this.onLoginResult(result));
+  }
+
   autoLogin(): Promise<boolean> {
     return this.http.get(environment.apiUrl+"login", { withCredentials: true })
         .toPromise().then(result => this.onLoginResult(result));
