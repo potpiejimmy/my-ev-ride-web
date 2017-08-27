@@ -11,7 +11,7 @@
                 </p-column>
                 <p-column field="make" header="Make"></p-column>
                 <p-column field="model" header="Model"></p-column>
-                <p-column field="sharecount" header="Owners" [style]="{'width':'80px'}"></p-column>
+                <p-column field="sharecount" header="No. of Owners" [style]="{'width':'80px'}"></p-column>
                 <p-column header="Value" [style]="{'text-align':'right'}">
                     <ng-template let-row="rowData" pTemplate="body">
                         {{app.priceFormatted(row.value, row.currency)}}

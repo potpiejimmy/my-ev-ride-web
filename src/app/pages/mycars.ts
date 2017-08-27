@@ -41,6 +41,7 @@ export class MyCarsComponent {
       'make': new FormControl('', Validators.required),
       'model': new FormControl('', Validators.required),
       'image': new FormControl('', Validators.required),
+      'infotext': new FormControl('', Validators.required),
       'value': new FormControl('', Validators.required),
       'sharecount': new FormControl('', Validators.required),
   });

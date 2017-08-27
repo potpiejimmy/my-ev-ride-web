@@ -34,20 +34,34 @@
     </div>
     <div class="ui-g-12" *ngIf="car">
         <div class="card card-w-title">
-            <h1>Edit your dream EV</h1>
+            <h1>Define your car</h1>
             <form [formGroup]="editform" (ngSubmit)="save()">
                 <div class="ui-g ui-fluid">
+                    <div class="ui-g-12 ui-md-2">
+                        Make:
+                    </div>
                     <div class="ui-g-12 ui-md-8">
                         <div class="ui-inputgroup">
                             <span class="ui-inputgroup-addon"><i class="material-icons">directions_car</i></span>
                             <input type="text" pInputText formControlName="make" placeholder="Make" [(ngModel)]="car.make">
-                            <input type="text" pInputText formControlName="model" placeholder="Model" [(ngModel)]="car.model">
                         </div>
                     </div>
-                    <div class="ui-g-12 ui-md-4">
+                    <div class="ui-g-12 ui-md-2">
                     </div>
 
-                    <div class="ui-g-12 ui-md-6">
+                    <div class="ui-g-12 ui-md-2">
+                        Model:
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                        <input type="text" pInputText formControlName="model" placeholder="Model Name" [(ngModel)]="car.model">
+                    </div>
+                    <div class="ui-g-12 ui-md-2">
+                    </div>
+
+                    <div class="ui-g-12 ui-md-2">
+                        Image:
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
                         <div *ngIf="car.image">
                             <img src="assets/layout/images/cars/{{car.image}}.png"/>
                         </div>
@@ -59,22 +73,43 @@
                             </p-dropdown>
                         </div>
                     </div>
-                    <div class="ui-g-12 ui-md-6">
-                    </div>
-        
-                    <div class="ui-g-12 ui-md-6">
-                        <p-spinner formControlName="value" [(ngModel)]="car.value" placeholder="Price"></p-spinner>
-                    </div>
                     <div class="ui-g-12 ui-md-2">
-                        <p-spinner formControlName="sharecount" [(ngModel)]="car.sharecount" placeholder="Owners"></p-spinner>
-                    </div>
-                    <div class="ui-g-12 ui-md-4">
                     </div>
 
+                    <div class="ui-g-12 ui-md-2">
+                        List Price:
+                    </div>
+                    <div class="ui-g-12 ui-md-2">
+                        <p-spinner formControlName="value" [(ngModel)]="car.value" placeholder="Price" [min]="1"></p-spinner>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                    </div>
+
+                    <div class="ui-g-12 ui-md-2">
+                        Info / Included Extras:
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                        <textarea pInputTextarea formControlName="infotext" autoResize="true" [(ngModel)]="car.infotext" placeholder="Info" style="height: 5em;"></textarea>
+                    </div>
+                    <div class="ui-g-12 ui-md-2">
+                    </div>
+
+                    <div class="ui-g-12 ui-md-2">
+                        No. of Co-Owners:
+                    </div>
+                    <div class="ui-g-12 ui-md-2">
+                        <p-spinner formControlName="sharecount" [(ngModel)]="car.sharecount" placeholder="Co-Owners" [min]="2" [max]="100"></p-spinner>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                    </div>
+
+                    <div class="ui-g-12 ui-md-2">
+                        Car location:
+                    </div>
                     <div class="ui-g-12 ui-md-8">
                         <choose-location #carlocation [latitude]="car.lat" [longitude]="car.lon" [formattedAddressInput]="car.location"></choose-location>
                     </div>
-                    <div class="ui-g-12 ui-md-4">
+                    <div class="ui-g-12 ui-md-2">
                     </div>
         
                     <div class="ui-g-12 ui-md-2">
