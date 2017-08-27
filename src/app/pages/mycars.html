@@ -35,60 +35,62 @@
     <div class="ui-g-12" *ngIf="car">
         <div class="card card-w-title">
             <h1>Edit your dream EV</h1>
-            <div class="ui-g ui-fluid">
-                <div class="ui-g-12 ui-md-8">
-                    <div class="ui-inputgroup">
-                        <span class="ui-inputgroup-addon"><i class="material-icons">directions_car</i></span>
-                        <input type="text" pInputText placeholder="Make" [(ngModel)]="car.make">
-                        <input type="text" pInputText placeholder="Model" [(ngModel)]="car.model">
+            <form [formGroup]="editform" (ngSubmit)="save()">
+                <div class="ui-g ui-fluid">
+                    <div class="ui-g-12 ui-md-8">
+                        <div class="ui-inputgroup">
+                            <span class="ui-inputgroup-addon"><i class="material-icons">directions_car</i></span>
+                            <input type="text" pInputText formControlName="make" placeholder="Make" [(ngModel)]="car.make">
+                            <input type="text" pInputText formControlName="model" placeholder="Model" [(ngModel)]="car.model">
+                        </div>
                     </div>
-                </div>
-                <div class="ui-g-12 ui-md-4">
-                </div>
+                    <div class="ui-g-12 ui-md-4">
+                    </div>
 
-                <div class="ui-g-12 ui-md-6">
-                    <div *ngIf="car.image">
-                        <img src="assets/layout/images/cars/{{car.image}}.png"/>
+                    <div class="ui-g-12 ui-md-6">
+                        <div *ngIf="car.image">
+                            <img src="assets/layout/images/cars/{{car.image}}.png"/>
+                        </div>
+                        <div>
+                            <p-dropdown formControlName="image" [options]="images" [(ngModel)]="car.image">
+                                <ng-template let-image pTemplate="item">
+                                    <img *ngIf="image.value" src="assets/layout/images/cars/{{image.value}}.png"/>
+                                </ng-template>
+                            </p-dropdown>
+                        </div>
                     </div>
-                    <div>
-                        <p-dropdown [options]="images" [(ngModel)]="car.image">
-                            <ng-template let-image pTemplate="item">
-                                <img *ngIf="image.value" src="assets/layout/images/cars/{{image.value}}.png"/>
-                            </ng-template>
-                        </p-dropdown>
+                    <div class="ui-g-12 ui-md-6">
                     </div>
-                </div>
-                <div class="ui-g-12 ui-md-6">
-                </div>
-    
-                <div class="ui-g-12 ui-md-6">
-                    <p-spinner [(ngModel)]="car.value" placeholder="Price"></p-spinner>
-                </div>
-                <div class="ui-g-12 ui-md-2">
-                    <p-spinner [(ngModel)]="car.sharecount" placeholder="Owners"></p-spinner>
-                </div>
-                <div class="ui-g-12 ui-md-4">
-                </div>
+        
+                    <div class="ui-g-12 ui-md-6">
+                        <p-spinner formControlName="value" [(ngModel)]="car.value" placeholder="Price"></p-spinner>
+                    </div>
+                    <div class="ui-g-12 ui-md-2">
+                        <p-spinner formControlName="sharecount" [(ngModel)]="car.sharecount" placeholder="Owners"></p-spinner>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                    </div>
 
-                <div class="ui-g-12 ui-md-8">
-                    <choose-location #carlocation [latitude]="car.lat" [longitude]="car.lon" [formattedAddressInput]="car.location"></choose-location>
+                    <div class="ui-g-12 ui-md-8">
+                        <choose-location #carlocation [latitude]="car.lat" [longitude]="car.lon" [formattedAddressInput]="car.location"></choose-location>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                    </div>
+        
+                    <div class="ui-g-12 ui-md-2">
+                        <button pButton type="submit" label="Save" [disabled]="!editform.valid"></button>
+                    </div>
+                    <div class="ui-g-12 ui-md-2">
+                        <button pButton type="button" (click)="cancel()" label="Cancel"></button>
+                    </div>
+                    <div class="ui-g-12 ui-md-2" *ngIf="car.id">
+                        <button pButton type="button" class="secondary" (click)="delete()" label="Delete this car"></button>
+                    </div>
+                    <div class="ui-g-12 ui-md-6">
+                    </div>
+                            
                 </div>
-                <div class="ui-g-12 ui-md-4">
-                </div>
-    
-                <div class="ui-g-12 ui-md-2">
-                    <button pButton type="button" (click)="save()" label="Save"></button>
-                </div>
-                <div class="ui-g-12 ui-md-2">
-                    <button pButton type="button" (click)="cancel()" label="Cancel"></button>
-                </div>
-                <div class="ui-g-12 ui-md-2" *ngIf="car.id">
-                    <button pButton type="button" class="secondary" (click)="delete()" label="Delete this car"></button>
-                </div>
-                <div class="ui-g-12 ui-md-6">
-                </div>
-                        
-            </div>
+            </form>
         </div>
     </div>
 </div>
