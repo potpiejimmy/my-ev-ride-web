@@ -1,4 +1,9 @@
 <div class="ui-g ui-fluid">
+    <div class="ui-g-12">
+        <div class="card">
+            <h3>Welcome, {{app.loginService.loginToken.display_name}} ({{app.loginService.loginToken.name}})</h3>
+        </div>
+    </div>
     <div class="ui-g-12" *ngIf="!car">
         <div class="card card-w-title">
             <h1>Your cars</h1>
@@ -107,7 +112,7 @@
                         Gallery text:
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                        <textarea pInputTextarea formControlName="teasertext" autoResize="true" [(ngModel)]="car.teasertext" placeholder="Enter sharing info, car uasge times etc." style="height: 5em;"></textarea>
+                        <textarea pInputTextarea formControlName="teasertext" autoResize="true" [(ngModel)]="car.teasertext" placeholder="Enter sharing info, car usage times etc." style="height: 5em;"></textarea>
                     </div>
                     <div class="ui-g-12 ui-md-2">
                     </div>

@@ -1,4 +1,4 @@
-import { Component, ElementRef, NgZone, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, ElementRef, NgZone, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
@@ -21,6 +21,7 @@ import { LocalStorageService } from 'angular-2-local-storage';
     @Input() public latitude: number;
     @Input() public longitude: number;
     @Input() public formattedAddressInput: string;
+    @Output() onLocationChanged = new EventEmitter<any>();
     public zoom: number;
     
     public searchControl: FormControl;
@@ -97,6 +98,7 @@ import { LocalStorageService } from 'angular-2-local-storage';
         this.latitude = place.latitude;
         this.longitude = place.longitude;
         this.zoom = 12;
+        this.onLocationChanged.emit();
     }
   
     private setAutoPosition() {
@@ -105,6 +107,7 @@ import { LocalStorageService } from 'angular-2-local-storage';
           this.latitude = position.coords.latitude;
           this.longitude = position.coords.longitude;
           this.zoom = 12;
+          this.onLocationChanged.emit();
         });
       }
     }

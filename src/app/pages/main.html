@@ -2,19 +2,38 @@
     <div class="ui-g-12 ui-lg-9">
         <div class="card card-w-title">
             <h1>Available cars near you</h1>
-            <p-dataTable #carsTable [value]="cars" [responsive]="true" selectionMode="single" expandableRows="true" [expandedRows]="expandedRows" (onRowSelect)="onRowSelected($event)">
-                <p-column field="distance" header="Distance" [style]="{'width':'80px'}"></p-column>
+            <p-dataTable #carsTable [value]="cars" [responsive]="true" selectionMode="single" expandableRows="true" [(selection)]="selectedRow" [expandedRows]="expandedRows">
+                <p-column header="Distance" [style]="{'text-align':'right','width':'100px'}">
+                    <ng-template let-row="rowData" pTemplate="body">
+                        <b>{{row.distance.toLocaleString()}} km</b>
+                    </ng-template>
+                </p-column>
                 <p-column [style]="{'width':'148px'}">
                     <ng-template let-row="rowData" pTemplate="body">
                       <img src="assets/layout/images/cars/{{row.image}}_s.png" />
                     </ng-template>
                 </p-column>
-                <p-column field="make" header="Make"></p-column>
-                <p-column field="model" header="Model"></p-column>
-                <p-column field="sharecount" header="No. of Owners" [style]="{'width':'80px'}"></p-column>
-                <p-column header="Your price" [style]="{'text-align':'right'}">
+                <p-column header="Make &amp; Model">
                     <ng-template let-row="rowData" pTemplate="body">
-                      <b>{{app.priceFormatted(row.value/row.sharecount, row.currency)}}</b>
+                        <b>{{row.make}}</b><br/>{{row.model}}
+                    </ng-template>
+                </p-column>
+                <p-column header="No. of Owners" [style]="{'width':'80px'}">
+                    <ng-template let-row="rowData" pTemplate="body">
+                        <span *ngIf="row.sharecount < 5">
+                            <i class="material-icons">person</i>
+                            <ng-template ngFor [ngForOf]="arrayOfLength(row.sharecount-1)" let-index="index + 1">
+                                <i class="material-icons" style="color: gray;">person</i>
+                            </ng-template>
+                        </span>
+                        <span *ngIf="row.sharecount >= 5">
+                            {{row.sharecount}}
+                        </span>
+                    </ng-template>
+                </p-column>
+                <p-column header="Your price" [style]="{'text-align':'right','width':'120px'}">
+                    <ng-template let-row="rowData" pTemplate="body">
+                      <span style="font-weight: bold; font-size: larger;">{{app.priceFormatted(row.value/row.sharecount, row.currency)}}</span>
                     </ng-template>
                 </p-column>
                 <ng-template let-row pTemplate="rowexpansion">
@@ -46,7 +65,7 @@
     <div class="ui-g-12 ui-lg-3">
         <div class="card card-w-title">
             <h1>Set your location</h1>
-            <choose-location #yourlocation></choose-location>
+            <choose-location #yourlocation (onLocationChanged)="onLocationChanged()"></choose-location>
         </div>
     </div>
 </div>

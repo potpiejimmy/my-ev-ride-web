@@ -10,8 +10,8 @@ export class AssetsService {
 
     }    
     
-    getCars(): Promise<any> {
-        return this.http.get(environment.apiUrl+'cars');
+    getCars(lon: number, lat: number): Promise<any> {
+        return this.http.get(environment.apiUrl+'cars?lon='+lon+'&lat='+lat);
     }
 
     getMyCars(): Promise<any> {
