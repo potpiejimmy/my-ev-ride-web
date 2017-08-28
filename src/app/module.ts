@@ -3,7 +3,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule}    from '@angular/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {LocationStrategy,HashLocationStrategy} from '@angular/common';
+//import {LocationStrategy,HashLocationStrategy} from '@angular/common';
 import {AppRoutes} from './routes';
 import 'rxjs/add/operator/toPromise';
 
@@ -194,7 +194,7 @@ import {ChooseLocationComponent}  from './components/chooselocation';
         ChooseLocationComponent
     ],
     providers: [
-       {provide: LocationStrategy, useClass: HashLocationStrategy},
+//       {provide: LocationStrategy, useClass: HashLocationStrategy},
        AuthGuard, AppService, LoginService, AuthHttp,
     /* API     */ AssetsService,
     /* PrimeNG */ ConfirmationService
