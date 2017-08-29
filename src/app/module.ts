@@ -97,6 +97,7 @@ import { AssetsService }  from './services/api/assets.service';
 import {MainComponent}  from './pages/main';
 import {LoginComponent}  from './pages/login';
 import {MyCarsComponent}  from './pages/mycars';
+import {EditCarComponent}  from './components/editcar';
 import {ChooseLocationComponent}  from './components/chooselocation';
 
 @NgModule({
@@ -191,6 +192,7 @@ import {ChooseLocationComponent}  from './components/chooselocation';
         MainComponent,
         LoginComponent,
         MyCarsComponent,
+        EditCarComponent,
         ChooseLocationComponent
     ],
     providers: [

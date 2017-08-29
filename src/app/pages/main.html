@@ -33,7 +33,7 @@
                 </p-column>
                 <p-column header="Your price" [style]="{'text-align':'right','width':'120px'}">
                     <ng-template let-row="rowData" pTemplate="body">
-                      <span style="font-weight: bold; font-size: larger;">{{app.priceFormatted(row.value/row.sharecount, row.currency)}}</span>
+                      <span style="font-weight: bold; font-size: 1.1em;">{{app.priceFormatted(row.value/row.sharecount, row.currency)}}</span>
                     </ng-template>
                 </p-column>
                 <ng-template let-row pTemplate="rowexpansion">
