@@ -29,8 +29,8 @@ export class EditCarComponent {
     {label:'Chevrolet', value: 'Chevrolet'},
     {label:'Nissan', value: 'Nissan'},
     {label:'Renault', value: 'Renault'},
-    {label:'Tesla', value: 'Tesla'},
-    {label:'Volkswagen', value: 'Volkswagen'}
+    {label:'Tesla', value: 'Tesla'}//,
+ //   {label:'Volkswagen', value: 'Volkswagen'}
   ]
 
   models = {
@@ -45,7 +45,7 @@ export class EditCarComponent {
     ],
     "Nissan": [
         {label:'<Choose Model>', value:''},
-        {label:'Leaf', value: 'Leaf'}
+        {label:'Leaf 2014', value: 'Leaf 2014'}
     ],
     "Renault": [
         {label:'<Choose Model>', value:''},
@@ -53,20 +53,38 @@ export class EditCarComponent {
     ],
     "Tesla": [
         {label:'<Choose Model>', value:''},
-        {label:'Model S', value: 'Model S'},
-        {label:'Model X', value: 'Model X'},
+//        {label:'Model S', value: 'Model S'},
+//        {label:'Model X', value: 'Model X'},
         {label:'Model 3', value: 'Model 3'}
-    ],
-    "Volkswagen": [
-        {label:'<Choose Model>', value:''},
-        {label:'e-Golf', value: 'e-Golf'}
-    ]
+    ]//,
+    // "Volkswagen": [
+    //     {label:'<Choose Model>', value:''},
+    //     {label:'e-Golf', value: 'e-Golf'}
+    // ]
   }
   
   images = {
     "BMW": {
         "i3": [
             {label:'i3 White', value:'bmw_i3_white'}
+        ],
+        "i8": [
+            {label:'i8 White', value:'bmw_i8_white'}
+        ]
+    },
+    "Chevrolet": {
+        "Bolt": [
+            {label:'Bolt Arctic Blue', value:'chevy_bolt_arctic_blue'}
+        ]
+    },
+    "Nissan": {
+        "Leaf 2014": [
+            {label:'Leaf Blue', value:'nissan_leaf_blue'}
+        ]
+    },
+    "Renault": {
+        "Zoe": [
+            {label:'Zoe Blue', value:'renault_zoe_blue'}
         ]
     },
     "Tesla": {

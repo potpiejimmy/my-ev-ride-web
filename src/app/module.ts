@@ -99,6 +99,7 @@ import {LoginComponent}  from './pages/login';
 import {MyCarsComponent}  from './pages/mycars';
 import {EditCarComponent}  from './components/editcar';
 import {ChooseLocationComponent}  from './components/chooselocation';
+import {CampagneComponent} from "./pages/campagne";
 
 @NgModule({
     imports: [
@@ -192,6 +193,7 @@ import {ChooseLocationComponent}  from './components/chooselocation';
         MainComponent,
         LoginComponent,
         MyCarsComponent,
+        CampagneComponent,
         EditCarComponent,
         ChooseLocationComponent
     ],

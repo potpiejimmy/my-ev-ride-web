@@ -1,4 +1,5 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Router } from "@angular/router";
 import { AssetsService } from '../services/api/assets.service';
 import { AppService } from '../services/app.service';
 import { ChooseLocationComponent } from '../components/chooselocation';
@@ -32,7 +33,9 @@ export class MainComponent implements AfterViewInit {
     return this._selectedRow;
   }
   
-  constructor(public app: AppService, private assetsService: AssetsService) {
+  constructor(public app: AppService,
+    private assetsService: AssetsService,
+    private router: Router) {
   }
 
   ngOnInit() {
@@ -43,15 +46,27 @@ export class MainComponent implements AfterViewInit {
   }
 
   refresh() {
-    console.log(this.yourLocation.longitude);
     this.assetsService.getCars(this.yourLocation.longitude, this.yourLocation.latitude).then(c => {
-      c.forEach(e => e.distance = Math.round(this.distance(e.lat, e.lon) * 100) / 100);
+      c.forEach(e => {
+        let isM = false;
+        e.distance = this.distance(e.lat, e.lon);
+        if (e.distance < 1) {
+          isM = true;
+          e.distance *= 1000; // m
+        }
+        e.distance = isM ? Math.round(e.distance) : Math.round(e.distance * 10) / 10;
+        e.distance = e.distance + (isM ? " m" : " km");
+      });
       this.cars = c;
     });
   }
 
   onLocationChanged() {
     this.refresh();
+  }
+
+  carItemAction() {
+    this.router.navigate(['/campagne']);
   }
 
   arrayOfLength(len: number) {
@@ -67,9 +82,9 @@ export class MainComponent implements AfterViewInit {
     var radtheta = Math.PI * theta/180
     var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
     dist = Math.acos(dist)
-    dist = dist * 180/Math.PI
-    dist = dist * 60 * 1.1515
-    dist = dist * 1.609344 // km
-    return dist
+    dist *= 180/Math.PI
+    dist *= 60 * 1.1515
+    dist *= 1.609344 // km
+    return dist;
   }
 }

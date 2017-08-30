@@ -5,7 +5,7 @@
             <p-dataTable #carsTable [value]="cars" [responsive]="true" selectionMode="single" expandableRows="true" [(selection)]="selectedRow" [expandedRows]="expandedRows">
                 <p-column header="Distance" [style]="{'text-align':'right','width':'100px'}">
                     <ng-template let-row="rowData" pTemplate="body">
-                        <b>{{row.distance.toLocaleString()}} km</b>
+                        <b>{{row.distance}}</b>
                     </ng-template>
                 </p-column>
                 <p-column [style]="{'width':'148px'}">
@@ -52,14 +52,18 @@
                             <div class="card" style="height: 100%;">
                                 <i class="material-icons">person</i>
                                 <p style="white-space:pre-wrap;">"{{row.teasertext}}"</p>
-                                <p><button pButton type="button" (click)="dummy()" label="Contact"></button></p>
-                                <p><button pButton type="button" (click)="dummy()" label="Add to watch list"></button></p>
-                                <p><button pButton class="secondary" type="button" (click)="dummy()" label="Request Co-Ownership"></button></p>
+                                <p><button pButton type="button" (click)="carItemAction()" label="Contact"></button></p>
+                                <p><button pButton type="button" (click)="carItemAction()" label="Add to watchlist"></button></p>
+                                <p><button pButton class="secondary" type="button" (click)="carItemAction()" label="Request Co-Ownership"></button></p>
                             </div>
                         </div>
                     </div>
                 </ng-template>
             </p-dataTable>
+            <p>
+                Can't find your dream EV?
+                <a [routerLink]="['/my']">Define your own now</a>
+            </p>
         </div>
     </div>
     <div class="ui-g-12 ui-lg-3">
