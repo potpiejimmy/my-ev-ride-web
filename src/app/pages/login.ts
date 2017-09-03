@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     }
 
     register() {
-        if (!this.userNew || this.userNew.length < 8) {this.messages = [{detail:"User name must be at least 8 characters long"}];return;}
+        if (!this.userNew || this.userNew.length < 5) {this.messages = [{detail:"User name must be at least 5 characters long"}];return;}
         if (!this.passwordNew || this.passwordNew.length < 8) {this.messages = [{detail:"Password must be at least 8 characters long"}];return;}
         if (this.passwordNew !== this.passwordRepeat) {this.messages = [{detail:"The passwords do not match"}];return;}
         this.loginService.register({
