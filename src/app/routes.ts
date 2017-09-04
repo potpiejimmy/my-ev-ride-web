@@ -12,7 +12,7 @@ export const routes: Routes = [
     {path: '', component: MainComponent},
     {path: 'login', component: LoginComponent},
     {path: 'my', component: MyCarsComponent, canActivate: [ AuthGuard ]},
-    {path: 'campagne', component: CampagneComponent}
+    {path: 'campaign', component: CampagneComponent}
 ];
 
 export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(routes);

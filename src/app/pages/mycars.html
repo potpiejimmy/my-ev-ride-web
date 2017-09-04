@@ -1,7 +1,8 @@
 <div class="ui-g ui-fluid">
     <div class="ui-g-12">
-        <div class="card">
-            <h3>Welcome, {{app.loginService.loginToken.display_name}} ({{app.loginService.loginToken.name}})</h3>
+        <div class="card card-w-title">
+            <h1>Welcome</h1>
+            {{app.loginService.loginToken.display_name}} ({{app.loginService.loginToken.name}})
         </div>
     </div>
     <div class="ui-g-12" *ngIf="!car">
