@@ -18,7 +18,8 @@ export class AuthHttp {
     requestOptions() {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        headers.append('Authorization', 'Bearer ' + this.loginService.loginTokenEncoded);
+        // note: use lower-case 'authorization' due to https://github.com/auth0/express-jwt/issues/173
+        headers.append('authorization', 'Bearer ' + this.loginService.loginTokenEncoded);
         return { headers: headers };
     }
 
