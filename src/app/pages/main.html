@@ -76,7 +76,7 @@
     <div class="ui-g-12 ui-lg-3">
         <div class="card card-w-title">
             <h1>Set your location</h1>
-            <choose-location #yourlocation (onLocationChanged)="onLocationChanged()"></choose-location>
+            <choose-location #yourlocation (onLocationChanged)="onLocationChanged()" [mapObject]="selectedRow"></choose-location>
         </div>
     </div>
     

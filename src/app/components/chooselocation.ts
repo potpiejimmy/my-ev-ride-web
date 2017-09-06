@@ -8,7 +8,7 @@ import { LocalStorageService } from 'angular-2-local-storage';
     selector: 'choose-location',
     styles: [`
       agm-map {
-        height: 160px;
+        height: 240px;
       }
       #search {
           width: 100%;
@@ -18,11 +18,31 @@ import { LocalStorageService } from 'angular-2-local-storage';
   })
   export class ChooseLocationComponent implements OnInit {
 
+    @ViewChild("agmMap") map: any;
+
     @Input() public latitude: number;
     @Input() public longitude: number;
     @Input() public formattedAddressInput: string;
+
+    @Input() public set mapObject(o: any) {
+      this._mapObject = o;
+      if (o) {
+        var bounds = new google.maps.LatLngBounds();
+        bounds.extend({lat: this.latitude, lng: this.longitude});
+        bounds.extend({lat: o.lat, lng: o.lon});
+        this.map._mapsWrapper.fitBounds(bounds);
+      } else {
+        if (this.latitude && this.longitude) {
+          this.map._mapsWrapper.setCenter({lat: this.latitude, lng: this.longitude});
+        }
+      }
+    };
+    public get mapObject(): any {return this._mapObject;}
+
     @Output() onLocationChanged = new EventEmitter<any>();
+
     public zoom: number;
+    _mapObject: any;
     
     public searchControl: FormControl;
   
