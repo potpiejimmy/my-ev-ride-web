@@ -28,7 +28,7 @@ Before running the tests make sure you are serving the app via `ng serve`.
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## AWS Setup
-Setup your AWS environment with this [AWS S3 and CloudFront Instruction] (https://rynop.com/2017/04/20/howto-serve-angular2-app-from-s3-and-cloudfront-with-free-https/)
+Setup your AWS environment with this [AWS S3 and CloudFront Instruction](https://rynop.com/2017/04/20/howto-serve-angular2-app-from-s3-and-cloudfront-with-free-https/)
 Attention: Be aware of the following points:
 1. When creating SSL-Certificate, make sure your region is set to "N. Virgina". The certificate cannot be selected in CloudFront settings when region of the certificate is not "N. Virginia"!
 2. Set the "Alternate Domain Names" in your second CloudFront to "yourDomain.com" (don`t leave them empty)
