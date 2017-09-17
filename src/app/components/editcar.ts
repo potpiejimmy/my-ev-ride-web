@@ -53,7 +53,7 @@ export class EditCarComponent {
     ],
     "Tesla": [
         {label:'<Choose Model>', value:''},
-//        {label:'Model S', value: 'Model S'},
+        {label:'Model S', value: 'Model S'},
 //        {label:'Model X', value: 'Model X'},
         {label:'Model 3', value: 'Model 3'}
     ]//,
@@ -101,8 +101,16 @@ export class EditCarComponent {
             {label:'Model 3 Signature Red 19"',  value:'tesla_model3_red_19'},
             {label:'Model 3 Gray 19"',  value:'tesla_model3_gray_19'},
             {label:'Model 3 Midnight Gray 19"',  value:'tesla_model3_midgray_19'}
-        ]
-    }
+        ],
+        "Model S": [
+          {label:'Model S Black',  value:'tesla_models_black_19'},
+          {label:'Model S Midnight Silver',  value:'tesla_models_midnight_19'},
+          {label:'Model S Deep Blue',  value:'tesla_models_blue_19'},
+          {label:'Model S Silver',  value:'tesla_models_silver_19'},
+          {label:'Model S Pearl White',  value:'tesla_models_white_19'},
+          {label:'Model S Red',  value:'tesla_models_red_19'}
+      ]
+  }
   }
 
 // --- END CAR CONFIGURATION ---
