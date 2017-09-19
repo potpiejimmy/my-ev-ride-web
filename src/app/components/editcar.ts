@@ -45,8 +45,9 @@ export class EditCarComponent {
     ],
     "Nissan": [
         {label:'<Choose Model>', value:''},
-        {label:'Leaf 2014', value: 'Leaf 2014'}
-    ],
+        {label:'Leaf 2013', value: 'Leaf 2013'},
+        {label:'Leaf 2018', value: 'Leaf 2018'}
+      ],
     "Renault": [
         {label:'<Choose Model>', value:''},
         {label:'Zoe', value: 'Zoe'}
@@ -74,12 +75,15 @@ export class EditCarComponent {
     },
     "Chevrolet": {
         "Bolt": [
-            {label:'Bolt Arctic Blue', value:'chevy_bolt_arctic_blue'}
+            {label:'Bolt', value:'chevy_bolt_arctic_blue'}
         ]
     },
     "Nissan": {
-        "Leaf 2014": [
-            {label:'Leaf Blue', value:'nissan_leaf_blue'}
+        "Leaf 2013": [
+            {label:'Leaf', value:'nissan_leaf_blue'}
+        ],
+        "Leaf 2018": [
+            {label:'Leaf', value:'nissan_leaf2018_white'}
         ]
     },
     "Renault": {
