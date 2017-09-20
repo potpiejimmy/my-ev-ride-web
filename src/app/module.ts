@@ -12,6 +12,7 @@ import {AutoCompleteModule} from 'primeng/primeng';
 import {BreadcrumbModule} from 'primeng/primeng';
 import {ButtonModule} from 'primeng/primeng';
 import {CalendarModule} from 'primeng/primeng';
+import {CaptchaModule} from 'primeng/primeng';
 import {CarouselModule} from 'primeng/primeng';
 import {ColorPickerModule} from 'primeng/primeng';
 import {ChartModule} from 'primeng/primeng';
@@ -113,6 +114,7 @@ import {CampagneComponent} from "./pages/campagne";
         BreadcrumbModule,
         ButtonModule,
         CalendarModule,
+        CaptchaModule,
         CarouselModule,
         ColorPickerModule,
         ChartModule,
