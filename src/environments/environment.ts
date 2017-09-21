@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:4300/myevride/api/'
+  apiUrl: 'http://localhost:4300/myevride/api/',
+  captchaSiteKey: '6Lc6ozEUAAAAACDGo5LtfK0yas_POg_R9H1TywHo'
 };

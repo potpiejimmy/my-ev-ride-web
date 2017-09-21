@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://doogetha.com/myevride/api/'
+  apiUrl: 'https://doogetha.com/myevride/api/',
+  captchaSiteKey: '6LfzPzEUAAAAAM18P0lPawg416OPTz4AQd-1YY4B'
 };

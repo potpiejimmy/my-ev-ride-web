@@ -76,9 +76,14 @@ export class LoginComponent implements OnInit, AfterViewInit {
         }
     }
 
-    showResponse(response) {
+    showResponse(response) : void {
         //call to a backend to verify against recaptcha with private key
         this.captchaToken = response.response;
         console.log(JSON.stringify(response));
+    }
+
+    getGoogleCaptchaKey() : string {
+        console.log("site key: " + environment.captchaSiteKey);
+        return environment.captchaSiteKey;
     }
 }

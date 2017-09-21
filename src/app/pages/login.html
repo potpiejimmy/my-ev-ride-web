@@ -83,7 +83,7 @@
                             </span>
                         </div>
                         <div>
-                            <p-captcha siteKey="6LfzPzEUAAAAAM18P0lPawg416OPTz4AQd-1YY4B" (onResponse)="showResponse($event)"></p-captcha>
+                            <p-captcha [siteKey]="getGoogleCaptchaKey()" (onResponse)="showResponse($event)"></p-captcha>
                         </div>
                         <div style="margin: 1.5em 0.5em;">
                             <button pButton type="submit" label="Register" icon="ui-icon-person" [disabled]="!captchaToken"></button>
