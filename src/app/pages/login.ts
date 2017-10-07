@@ -59,6 +59,10 @@ export class LoginComponent implements OnInit, AfterViewInit {
         window.location.href = environment.apiUrl+"login/google?returnurl="+encodeURIComponent(window.location.href+"?dologin=true");
     }
 
+    loginFacebook() {
+        window.location.href = environment.apiUrl+"login/facebook?returnurl="+encodeURIComponent(window.location.href+"?dologin=true");
+    }
+
     autoLogin() {
         this.loginService.autoLogin().then(result => this.onLoginCompleted(result));
     }
