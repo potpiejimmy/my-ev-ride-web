@@ -17,13 +17,3 @@ button#google_signin:hover {
     background: url('assets/layout/images/btn_google_signin_dark_pressed_web.png') no-repeat;
 }
 
-button#facebook_signin {
-    background: url('assets/layout/images/btn_facebook_signin_dark_normal_web.png') no-repeat;
-    width: 191px;
-    height: 46px;
-    border: none;
-}
-
-button#facebook_signin:hover {
-    background: url('assets/layout/images/btn_facebook_signin_dark_pressed_web.png') no-repeat;
-}
