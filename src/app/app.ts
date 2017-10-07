@@ -69,17 +69,17 @@ export class AppComponent implements AfterViewInit {
     }
     
     onLayoutClick() {
-        if(!this.topbarItemClick) {
+        if (!this.topbarItemClick) {
             this.activeTopbarItem = null;
             this.topbarMenuActive = false;
         }
 
-        if(!this.menuClick) {
-            if(this.isHorizontal() || this.isSlim()) {
+        if (!this.menuClick) {
+            if (this.isHorizontal() || this.isSlim()) {
                 this.resetMenu = true;
             }
             
-            if(this.overlayMenuActive || this.staticMenuMobileActive) {
+            if (this.overlayMenuActive || this.staticMenuMobileActive) {
                 this.hideOverlayMenu();
             }
             
@@ -100,7 +100,7 @@ export class AppComponent implements AfterViewInit {
         this.rotateMenuButton = !this.rotateMenuButton;
         this.topbarMenuActive = false;
 
-        if(this.layoutMode === MenuOrientation.OVERLAY) {
+        if (this.layoutMode === MenuOrientation.OVERLAY) {
             this.overlayMenuActive = !this.overlayMenuActive;
         }
         else {
@@ -161,7 +161,7 @@ export class AppComponent implements AfterViewInit {
     }
 
     isTablet() {
-        let width = window.innerWidth;
+        const width = window.innerWidth;
         return width <= 1024 && width > 640;
     }
 

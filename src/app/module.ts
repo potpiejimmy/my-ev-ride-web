@@ -74,11 +74,11 @@ import {TreeModule} from 'primeng/primeng';
 import {TreeTableModule} from 'primeng/primeng';
 
 import {AppComponent}  from './app';
-import {AppMenuComponent,AppSubMenu}  from './components/menu';
-import {AppTopBar}  from './components/topbar';
-import {AppFooter}  from './components/footer';
-import {AppRightPanel}  from './components/rightpanel';
-import {InlineProfileComponent}  from './components/profile';
+import {AppMenuComponent,AppSubMenuComponent}  from './components/menu';
+import {AppTopBarComponent}  from './components/topbar';
+import {AppFooterComponent}  from './components/footer';
+import {AppRightpanelComponent}  from './components/rightpanel';
+import {AppInlineProfileComponent}  from './components/profile';
 
 import { ConfirmationService } from 'primeng/primeng';
 
@@ -184,11 +184,11 @@ import {CampagneComponent} from "./pages/campagne";
     declarations: [
         AppComponent,
         AppMenuComponent,
-        AppSubMenu,
-        AppTopBar,
-        AppFooter,
-        AppRightPanel,
-        InlineProfileComponent,
+        AppSubMenuComponent,
+        AppTopBarComponent,
+        AppFooterComponent,
+        AppRightpanelComponent,
+        AppInlineProfileComponent,
         // my components
         MainComponent,
         LoginComponent,

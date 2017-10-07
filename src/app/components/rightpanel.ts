@@ -6,7 +6,7 @@ declare var jQuery: any;
     selector: 'app-rightpanel',
     templateUrl: './rightpanel.html'
 })
-export class AppRightPanel {
+export class AppRightpanelComponent {
 
     rightPanelMenuScroller: HTMLDivElement;
     

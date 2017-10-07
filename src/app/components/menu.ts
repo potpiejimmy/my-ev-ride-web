@@ -1,7 +1,5 @@
-import {Component,Input,OnInit,EventEmitter,ViewChild} from '@angular/core';
+import {Component,Input,OnInit} from '@angular/core';
 import {trigger,state,style,transition,animate} from '@angular/animations';
-import {Location} from '@angular/common';
-import {Router} from '@angular/router';
 import {MenuItem} from 'primeng/primeng';
 import {AppComponent} from '../app';
 
@@ -84,7 +82,7 @@ export class AppMenuComponent implements OnInit {
         ])
     ]
 })
-export class AppSubMenu {
+export class AppSubMenuComponent {
 
     @Input() item: MenuItem;
     
@@ -99,12 +97,12 @@ export class AppSubMenu {
     constructor(public app: AppComponent) {}
         
     itemClick(event: Event, item: MenuItem, index: number) {        
-        if(this.root) {
+        if (this.root) {
             this.app.menuHoverActive = !this.app.menuHoverActive;
         }
         
         //avoid processing disabled items
-        if(item.disabled) {
+        if (item.disabled) {
             event.preventDefault();
             return true;
         }
@@ -113,17 +111,17 @@ export class AppSubMenu {
         this.activeIndex = (this.activeIndex === index) ? null : index;
                 
         //execute command
-        if(item.command) {
+        if (item.command) {
             item.command({originalEvent: event, item: item});
         }
 
         //prevent hash change
-        if(item.items || (!item.url && !item.routerLink)) {
+        if (item.items || (!item.url && !item.routerLink)) {
             event.preventDefault();
         }
         
         //hide menu
-        if(!item.items) {
+        if (!item.items) {
             if(this.app.isHorizontal() || this.app.isSlim())
                 this.app.resetMenu = true;
             else
@@ -136,7 +134,7 @@ export class AppSubMenu {
     }
     
     onMouseEnter(index: number) {
-        if(this.root && this.app.menuHoverActive && (this.app.isHorizontal() || this.app.isSlim())) {
+        if (this.root && this.app.menuHoverActive && (this.app.isHorizontal() || this.app.isSlim())) {
             this.activeIndex = index;
         }
     }
@@ -152,7 +150,7 @@ export class AppSubMenu {
     set reset(val:boolean) {
         this._reset = val;
 
-        if(this._reset && (this.app.isHorizontal() || this.app.isSlim())) {
+        if (this._reset && (this.app.isHorizontal() || this.app.isSlim())) {
             this.activeIndex = null;
         }
     }

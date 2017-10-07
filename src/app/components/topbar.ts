@@ -5,7 +5,7 @@ import {AppComponent} from '../app';
     selector: 'app-topbar',
     templateUrl: './topbar.html'
 })
-export class AppTopBar {
+export class AppTopBarComponent {
 
     constructor(public app:AppComponent) {}
 

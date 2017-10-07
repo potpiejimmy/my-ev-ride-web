@@ -5,7 +5,7 @@ import {MenuItem} from 'primeng/primeng';
 import {AppComponent} from '../app';
 
 @Component({
-    selector: 'inline-profile',
+    selector: 'app-inline-profile',
     template: `
         <div class="profile" [ngClass]="{'profile-expanded':active}">
             <div class="profile-image"></div>
@@ -55,7 +55,7 @@ import {AppComponent} from '../app';
         ])
     ]
 })
-export class InlineProfileComponent {
+export class AppInlineProfileComponent {
 
     active: boolean;
 
