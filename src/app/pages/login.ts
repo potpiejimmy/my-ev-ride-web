@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     passwordNew: string;
     passwordRepeat: string;
     displayName: string;
+    captchaToken: string;
     messages = [];
 
     constructor(
@@ -49,7 +50,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
         this.loginService.register({
             name: this.userNew,
             password: this.passwordNew,
-            display_name: this.displayName
+            display_name: this.displayName,
+            captcha: this.captchaToken
         }).then(result => this.onLoginCompleted(result));
     }
 
@@ -72,5 +74,16 @@ export class LoginComponent implements OnInit, AfterViewInit {
         } else {
             this.app.setMessage('Login failed', 'Bad user name or password.');
         }
+    }
+
+    showResponse(response) : void {
+        //call to a backend to verify against recaptcha with private key
+        this.captchaToken = response.response;
+        console.log(JSON.stringify(response));
+    }
+
+    getGoogleCaptchaKey() : string {
+        console.log("site key: " + environment.captchaSiteKey);
+        return environment.captchaSiteKey;
     }
 }
