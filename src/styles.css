@@ -19,7 +19,7 @@ button#google_signin:hover {
 
 button#facebook_signin {
     background: url('assets/layout/images/btn_facebook_signin_dark_normal_web.png') no-repeat;
-    width: 191px;
+    width: 216px;
     height: 46px;
     border: none;
 }
