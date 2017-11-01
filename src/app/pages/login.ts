@@ -19,6 +19,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
     passwordRepeat: string;
     displayName: string;
     captchaToken: string;
+    captchaSiteKey = environment.captchaSiteKey;
+
     messages = [];
 
     constructor(
@@ -76,14 +78,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
         }
     }
 
-    showResponse(response) : void {
-        //call to a backend to verify against recaptcha with private key
+    onCaptchaResponse(response) : void {
         this.captchaToken = response.response;
-        console.log(JSON.stringify(response));
-    }
-
-    getGoogleCaptchaKey() : string {
-        console.log("site key: " + environment.captchaSiteKey);
-        return environment.captchaSiteKey;
     }
 }
