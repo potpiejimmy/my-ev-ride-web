@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { AssetsService } from '../services/api/assets.service';
 import { AppService } from '../services/app.service';
 import { ChooseLocationComponent } from '../components/chooselocation';
+import { CarConfig } from '../services/carconfig.service';
 
 @Component({
   selector: 'main',
@@ -35,7 +36,8 @@ export class MainComponent implements AfterViewInit {
   
   constructor(public app: AppService,
     private assetsService: AssetsService,
-    private router: Router) {
+    private router: Router,
+    public carCfg: CarConfig) {
   }
 
   ngOnInit() {

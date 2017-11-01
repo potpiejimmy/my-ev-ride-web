@@ -6,7 +6,7 @@
                 Make:
             </div>
             <div class="ui-g-12 ui-md-8">
-                <p-dropdown formControlName="make" [autoWidth]="false" [options]="makes" [(ngModel)]="car.make" (onChange)="onMakeChanged()"></p-dropdown>
+                <p-dropdown formControlName="make" [autoWidth]="false" [options]="carCfg.makes" [(ngModel)]="car.make" (onChange)="onMakeChanged()"></p-dropdown>
             </div>
             <div class="ui-g-12 ui-md-2">
             </div>
@@ -15,7 +15,7 @@
                 Model:
             </div>
             <div class="ui-g-12 ui-md-8">
-                <p-dropdown formControlName="model" [autoWidth]="false" [options]="models[car.make]" [(ngModel)]="car.model" (onChange)="onModelChanged()"></p-dropdown>
+                <p-dropdown formControlName="model" [autoWidth]="false" [options]="carCfg.models[car.make]" [(ngModel)]="car.model" (onChange)="onModelChanged()"></p-dropdown>
             </div>
             <div class="ui-g-12 ui-md-2">
             </div>

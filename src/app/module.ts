@@ -92,6 +92,7 @@ import { AuthGuard } from './services/authguard.service';
 import { AppService } from './services/app.service';
 import { LoginService }  from './services/login.service';
 import { AuthHttp }  from './services/authhttp.service';
+import { CarConfig }  from './services/carconfig.service';
 import { AssetsService }  from './services/api/assets.service';
 
 // my components
@@ -201,7 +202,7 @@ import {CampagneComponent} from "./pages/campagne";
     ],
     providers: [
 //       {provide: LocationStrategy, useClass: HashLocationStrategy},
-       AuthGuard, AppService, LoginService, AuthHttp,
+       AuthGuard, AppService, LoginService, AuthHttp, CarConfig,
     /* API     */ AssetsService,
     /* PrimeNG */ ConfirmationService
     ],

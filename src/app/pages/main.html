@@ -13,7 +13,7 @@
                                     expandableRows="true"
                                     [(selection)]="selectedRow"
                                     [expandedRows]="expandedRows">
-                <p-footer>{{cars.length === 1000 ? '>' : ''}}{{cars.length}} cars found.</p-footer>
+                <p-header>{{carsTable.totalRecords === 1000 ? '>' : ''}}{{carsTable.totalRecords}} cars found.</p-header>
                 <p-column header="Distance" [style]="{'text-align':'right','width':'100px'}">
                     <ng-template let-row="rowData" pTemplate="body">
                         <b>{{row.distance}}</b>
@@ -24,7 +24,10 @@
                       <img src="assets/layout/images/cars/{{row.image}}_s.png" />
                     </ng-template>
                 </p-column>
-                <p-column header="Make &amp; Model">
+                <p-column header="Make &amp; Model" [filter]="true" field="make" filterMatchMode="equals">
+                    <ng-template pTemplate="filter" let-col>
+                        <p-dropdown [options]="carCfg.makes" [style]="{'width':'100%'}" (onChange)="carsTable.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter"></p-dropdown>
+                    </ng-template>
                     <ng-template let-row="rowData" pTemplate="body">
                         <b>{{row.make}}</b><br/>{{row.model}}
                     </ng-template>
