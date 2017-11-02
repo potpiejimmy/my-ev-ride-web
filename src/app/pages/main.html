@@ -30,7 +30,8 @@
                                     selectionMode="single"
                                     expandableRows="true"
                                     [(selection)]="selectedRow"
-                                    [expandedRows]="expandedRows">
+                                    [expandedRows]="expandedRows"
+                                    (onRowSelect)="onRowSelect($event)">
                 <p-header>{{carsTable.totalRecords === 1000 ? '>' : ''}}{{carsTable.totalRecords}} cars found.</p-header>
                 <p-column header="Distance" [style]="{'text-align':'right','width':'100px'}">
                     <ng-template let-row="rowData" pTemplate="body">
