@@ -33,7 +33,7 @@
                     </p-dataTable>
                 </div>
                 <div class="ui-g-12 ui-md-6 ui-lg-2">
-                    <button pButton type="button" (click)="newCar()" label="New car"></button>
+                    <button pButton type="button" (click)="newCar()" label="New car" *ngIf="mycars.length < 5"></button>
                 </div>
             </div>
         </div>
