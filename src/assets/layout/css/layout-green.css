@@ -699,10 +699,9 @@
       .landing-wrapper #introduction .feature-icon:hover i {
         color: #ffffff; }
 .landing-wrapper #howitworks {
-  background-color: #cccccc;
+  background-color: #c8ffbf;
   margin: 0 auto;
   padding: 50px;
-  max-width: 960px;
   text-align: center; }
   .landing-wrapper #howitworks h2 {
     font-weight: 400;
@@ -710,7 +709,7 @@
   .landing-wrapper #howitworks h3 {
     font-weight: 400; }
   .landing-wrapper #howitworks p {
-    color: #757575; }
+    color: #404040; }
 .landing-wrapper #features {
   width: 960px;
   margin: 0 auto;
