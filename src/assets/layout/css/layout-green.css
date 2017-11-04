@@ -699,7 +699,7 @@
       .landing-wrapper #introduction .feature-icon:hover i {
         color: #ffffff; }
 .landing-wrapper #howitworks {
-  background-color: #c8ffbf;
+  background-color: #f0fff0;
   margin: 0 auto;
   padding: 50px;
   text-align: center; }
@@ -710,6 +710,23 @@
     font-weight: 400; }
   .landing-wrapper #howitworks p {
     color: #404040; }
+  .landing-wrapper #howitworks div {
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 100%; }
+  .landing-wrapper #howitworks div#step1img {
+    background-image: url("../images/landing/step_dream.png");
+    max-width: 456px;
+    height: 45px; }
+  .landing-wrapper #howitworks div#step2img {
+    background-image: url("../images/landing/step_explore.png");
+    max-width: 271px;
+    height: 90px; }
+  .landing-wrapper #howitworks div#step3img {
+    background-image: url("../images/landing/step_socialize.png");
+    max-width: 93px;
+    height: 60px; }
 .landing-wrapper #features {
   width: 960px;
   margin: 0 auto;
