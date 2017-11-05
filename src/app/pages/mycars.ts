@@ -23,6 +23,10 @@ export class MyCarsComponent {
     this.refresh();
   }
 
+  onRowSelect(sel: any) {
+    this.car = sel.data;
+  }
+
   refresh() {
     this.assetsService.getMyCars().then(c => this.mycars = c);
   }
