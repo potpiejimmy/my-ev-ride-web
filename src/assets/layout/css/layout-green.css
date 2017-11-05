@@ -735,6 +735,18 @@
     background-image: url("../images/landing/step_sign.png");
     max-width: 100px;
     height: 60px; }
+  .landing-wrapper #howitworks div#step6img {
+    background-image: url("../images/landing/step_share.png");
+    max-width: 291px;
+    height: 130px; }
+  .landing-wrapper #howitworks div#step7img {
+    background-image: url("../images/landing/step_drive.png");
+    max-width: 112px;
+    height: 44px; }
+  .landing-wrapper #howitworks div#step8img {
+    background-image: url("../images/landing/step_manage.png");
+    max-width: 289px;
+    height: 104px; }
 .landing-wrapper #features {
   width: 960px;
   margin: 0 auto;
