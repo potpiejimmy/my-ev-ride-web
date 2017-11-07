@@ -1,9 +1,9 @@
 import { Injectable }    from '@angular/core';
 
-import { Headers, Http } from '@angular/http';
+import { HttpClient } from "@angular/common/http";
 import 'rxjs/add/operator/toPromise';
 
-import { JwtHelper } from 'angular2-jwt';
+import * as jwtDecode from 'jwt-decode';
 import { LocalStorageService } from 'angular-2-local-storage';
 
 import { environment } from '../../environments/environment';
@@ -24,16 +24,14 @@ export class LoginService {
     this.localStorageService.set('redirectUrl', redirectUrl);
   }
 
-  private jwtHelper: JwtHelper = new JwtHelper();
-
-  constructor(private http: Http, private localStorageService: LocalStorageService) {
+  constructor(private http: HttpClient, private localStorageService: LocalStorageService) {
     this.readToken();
   }
 
   readToken() {
     this.loginTokenEncoded = this.localStorageService.get('token');
     if (!this.loginTokenEncoded) return false;
-    this.loginToken = this.jwtHelper.decodeToken(this.loginTokenEncoded);
+    this.loginToken = jwtDecode(this.loginTokenEncoded);
     return this.isLoggedIn = this.loginToken != null;
   }
 
@@ -53,8 +51,7 @@ export class LoginService {
   }
 
   onLoginResult(result: any) {
-    let resJson = result.json();
-    let token = resJson.token;
+    let token = result.token;
     if (!token) return false;
     this.localStorageService.set('token', token);
     return this.readToken();
