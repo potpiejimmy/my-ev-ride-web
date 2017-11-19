@@ -65,7 +65,7 @@ export class MainComponent implements AfterViewInit {
   }
 
   carItemAction() {
-    this.router.navigate(['/campaign']);
+    this.router.navigate(['/support']);
   }
 
   arrayOfLength(len: number) {

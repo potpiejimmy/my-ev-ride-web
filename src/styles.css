@@ -6,6 +6,10 @@
     font-size: 1.2em;
 }
 
+a.footer-text-left {
+    color: #212121;
+}
+
 button#google_signin {
     background: url('assets/layout/images/btn_google_signin_dark_normal_web.png') no-repeat;
     width: 191px;

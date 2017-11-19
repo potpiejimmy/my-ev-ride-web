@@ -102,6 +102,7 @@ import {MyCarsComponent}  from './pages/mycars';
 import {EditCarComponent}  from './components/editcar';
 import {ChooseLocationComponent}  from './components/chooselocation';
 import {CampagneComponent} from "./pages/campagne";
+import {AboutComponent} from "./pages/about";
 
 @NgModule({
     imports: [
@@ -197,6 +198,7 @@ import {CampagneComponent} from "./pages/campagne";
         LoginComponent,
         MyCarsComponent,
         CampagneComponent,
+        AboutComponent,
         EditCarComponent,
         ChooseLocationComponent
     ],
