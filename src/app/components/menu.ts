@@ -42,7 +42,7 @@ export class AppMenuComponent implements OnInit {
             <li [ngClass]="{'active-menuitem': isActive(i)}" [class]="child.badgeStyleClass" *ngIf="child.visible === false ? false : true">
                 <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter(i)" class="ripplelink" *ngIf="!child.routerLink" 
                     [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
-                    <i class="material-icons">{{child.icon}}</i>
+                    <i *ngIf="child.icon" class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
                     <span class="menuitem-badge" *ngIf="child.badge">{{child.badge}}</span>
                     <i class="material-icons submenu-icon" *ngIf="child.items">keyboard_arrow_down</i>
@@ -50,7 +50,7 @@ export class AppMenuComponent implements OnInit {
 
                 <a (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter(i)" class="ripplelink" *ngIf="child.routerLink"
                     [routerLink]="child.routerLink" routerLinkActive="active-menuitem-routerlink" [routerLinkActiveOptions]="{exact: true}" [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
-                    <i class="material-icons">{{child.icon}}</i>
+                    <i *ngIf="child.icon" class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
                     <span class="menuitem-badge" *ngIf="child.badge">{{child.badge}}</span>
                     <i class="material-icons submenu-icon" *ngIf="child.items">keyboard_arrow_down</i>
