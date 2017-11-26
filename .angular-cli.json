@@ -10,6 +10,8 @@
       "assets": [
         "assets",
         "favicon.ico",
+        "android-chrome-192x192.png",
+        "manifest.json",
         "landing.html",
         ".htaccess"
       ],
@@ -33,7 +35,8 @@
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
-      }
+      },
+      "serviceWorker": true
     }
   ],
   "e2e": {

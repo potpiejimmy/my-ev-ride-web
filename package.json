@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "http-server ./dist",
-    "build": "ng build --prod --env=prod --base-href=/app/ --sm=false --aot=true --output-path=dist/app && mv ./dist/app/landing.html ./dist/index.html && cd dist && zip -r dist.zip *",
+    "build": "ng build --prod --env=prod --base-href=/app/ --sm=false --aot=true --output-path=dist/app && mv ./dist/app/landing.html ./dist/index.html && mv ./dist/app/ngsw* ./dist && cd dist && zip -r dist.zip *",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -35,9 +35,10 @@
     "zone.js": "^0.8.18"
   },
   "devDependencies": {
-    "@angular/cli": "1.5.2",
+    "@angular/cli": "^1.6.0-rc.0",
     "@angular/compiler-cli": "^5.0.3",
     "@angular/language-service": "^5.0.3",
+    "@angular/service-worker": "^5.0.3",
     "@types/googlemaps": "^3.26.18",
     "@types/jasmine": "~2.8.0",
     "@types/node": "~8.0.53",

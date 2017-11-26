@@ -3,8 +3,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule}    from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ServiceWorkerModule} from '@angular/service-worker';
 //import {LocationStrategy,HashLocationStrategy} from '@angular/common';
 import {AppRoutes} from './routes';
+import {environment} from '../environments/environment';
 import 'rxjs/add/operator/toPromise';
 
 import {AccordionModule} from 'primeng/primeng';
@@ -107,6 +109,7 @@ import {AboutComponent} from "./pages/about";
 @NgModule({
     imports: [
         BrowserModule,
+        environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
         FormsModule,
         AppRoutes,
         HttpClientModule,
