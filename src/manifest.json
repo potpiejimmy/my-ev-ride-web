@@ -1,7 +1,7 @@
 {
     "name": "My EV Ride",
     "short_name": "My EV Ride",
-    "theme_color": "#F0FFF0",
+    "theme_color": "#4CAF50",
     "background_color": "#4CAF50",
     "start_url": "/app/",
     "display": "standalone",
