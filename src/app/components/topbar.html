@@ -22,19 +22,41 @@
             <i class="material-icons">menu</i>
         </a>
         <ul class="topbar-items animated fadeInDown" [ngClass]="{'topbar-items-visible': app.topbarMenuActive}">
+            <li #about [ngClass]="{'active-top-menu':app.activeTopbarItem === about}">
+
+                <a href="#" (click)="app.onTopbarItemClick($event,about)" title="About">
+                    <i class="topbar-icon material-icons">more_vert</i>
+                    <span class="topbar-item-name">More</span>
+                </a>
+                
+                <ul class="ultima-menu animated fadeInDown">
+                    <li role="menuitem">
+                        <a [routerLink]="['/about']" (click)="app.onTopbarItemClick($event,about)">
+                            <i class="material-icons">info_outline</i>
+                            <span>About my-ev-ride.com</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li #profile class="profile-item" *ngIf="(app.profileMode==='top'||app.isHorizontal())&&app.app.loginService.isLoggedIn"
                 [ngClass]="{'active-top-menu':app.activeTopbarItem === profile}">
 
                 <a href="#" (click)="app.onTopbarItemClick($event,profile)" [title]="app.app.loginService.loginToken.name">
                     <i class="topbar-icon material-icons">person</i>
-                    <span class="topbar-item-name">Your profile</span>
+                    <span class="topbar-item-name">{{app.app.loginService.loginToken.name}}</span>
                 </a>
                 
                 <ul class="ultima-menu animated fadeInDown">
                     <li role="menuitem">
+                        <a [routerLink]="['/my']" (click)="app.onTopbarItemClick($event,profile)">
+                            <i class="material-icons">folder_shared</i>
+                            <span>My cars</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
                         <a [routerLink]="['/']" (click)="app.app.logout()">
                             <i class="material-icons">power_settings_new</i>
-                            <span>Logout ({{app.app.loginService.loginToken.name}})</span>
+                            <span>Logout</span>
                         </a>
                     </li>
                 </ul>
