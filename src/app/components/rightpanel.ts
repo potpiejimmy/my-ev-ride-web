@@ -13,6 +13,5 @@ export class AppRightpanelComponent implements AfterViewInit {
     constructor(public app: AppComponent) {}
 
     ngAfterViewInit() {
-      setTimeout(() => {this.rightPanelMenuScrollerViewChild.moveBar(); }, 100);
     }
 }
