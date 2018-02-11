@@ -60,12 +60,14 @@ import {ProgressBarModule} from 'primeng/primeng';
 import {RadioButtonModule} from 'primeng/primeng';
 import {RatingModule} from 'primeng/primeng';
 import {ScheduleModule} from 'primeng/primeng';
+import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {SelectButtonModule} from 'primeng/primeng';
 import {SlideMenuModule} from 'primeng/primeng';
 import {SliderModule} from 'primeng/primeng';
 import {SpinnerModule} from 'primeng/primeng';
 import {SplitButtonModule} from 'primeng/primeng';
 import {StepsModule} from 'primeng/primeng';
+import {TableModule} from 'primeng/table';
 import {TabMenuModule} from 'primeng/primeng';
 import {TabViewModule} from 'primeng/primeng';
 import {TerminalModule} from 'primeng/primeng';
@@ -78,7 +80,7 @@ import {TreeTableModule} from 'primeng/primeng';
 
 import {AppComponent}  from './app';
 import {AppMenuComponent,AppSubMenuComponent}  from './components/menu';
-import {AppTopBarComponent}  from './components/topbar';
+import {AppTopbarComponent}  from './components/topbar';
 import {AppFooterComponent}  from './components/footer';
 import {AppRightpanelComponent}  from './components/rightpanel';
 import {AppInlineProfileComponent}  from './components/profile';
@@ -105,6 +107,8 @@ import {EditCarComponent}  from './components/editcar';
 import {ChooseLocationComponent}  from './components/chooselocation';
 import {CampagneComponent} from "./pages/campagne";
 import {AboutComponent} from "./pages/about";
+import { AppBreadcrumbComponent } from './components/breadcrumb';
+import { BreadcrumbService } from './components/breadcrumb.service';
 
 @NgModule({
     imports: [
@@ -165,12 +169,14 @@ import {AboutComponent} from "./pages/about";
         RadioButtonModule,
         RatingModule,
         ScheduleModule,
+        ScrollPanelModule,
         SelectButtonModule,
         SlideMenuModule,
         SliderModule,
         SpinnerModule,
         SplitButtonModule,
         StepsModule,
+        TableModule,
         TabMenuModule,
         TabViewModule,
         TerminalModule,
@@ -192,10 +198,11 @@ import {AboutComponent} from "./pages/about";
         AppComponent,
         AppMenuComponent,
         AppSubMenuComponent,
-        AppTopBarComponent,
+        AppTopbarComponent,
         AppFooterComponent,
         AppRightpanelComponent,
         AppInlineProfileComponent,
+        AppBreadcrumbComponent,
         // my components
         MainComponent,
         LoginComponent,
@@ -206,6 +213,7 @@ import {AboutComponent} from "./pages/about";
         ChooseLocationComponent
     ],
     providers: [
+       BreadcrumbService,
 //       {provide: LocationStrategy, useClass: HashLocationStrategy},
        AuthGuard, AppService, LoginService, AuthHttp, CarConfig,
     /* API     */ AssetsService,

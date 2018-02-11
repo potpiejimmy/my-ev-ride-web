@@ -1,28 +1,18 @@
-import {Component,OnInit,ViewChild,ElementRef} from '@angular/core';
+import {Component, ViewChild, AfterViewInit} from '@angular/core';
 import {AppComponent} from '../app';
-declare var jQuery: any;
+import {ScrollPanel} from 'primeng/primeng';
 
 @Component({
     selector: 'app-rightpanel',
-    templateUrl: './rightpanel.html'
+    templateUrl: 'rightpanel.html'
 })
-export class AppRightpanelComponent {
+export class AppRightpanelComponent implements AfterViewInit {
 
-    rightPanelMenuScroller: HTMLDivElement;
-    
-    @ViewChild('rightPanelMenuScroller') rightPanelMenuScrollerViewChild: ElementRef;
+    @ViewChild('scrollRightPanel') rightPanelMenuScrollerViewChild: ScrollPanel;
 
     constructor(public app: AppComponent) {}
-    
+
     ngAfterViewInit() {
-        this.rightPanelMenuScroller = <HTMLDivElement> this.rightPanelMenuScrollerViewChild.nativeElement;
-        
-        setTimeout(() => {
-            jQuery(this.rightPanelMenuScroller).nanoScroller({flash:true});
-        }, 10);
-    }
-    
-    ngOnDestroy() {
-        jQuery(this.rightPanelMenuScroller).nanoScroller({flash:true});
+      setTimeout(() => {this.rightPanelMenuScrollerViewChild.moveBar(); }, 100);
     }
 }
