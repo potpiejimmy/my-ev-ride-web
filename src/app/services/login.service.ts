@@ -1,7 +1,6 @@
 import { Injectable }    from '@angular/core';
 
 import { HttpClient } from "@angular/common/http";
-import 'rxjs/add/operator/toPromise';
 
 import * as jwtDecode from 'jwt-decode';
 import { LocalStorageService } from 'angular-2-local-storage';

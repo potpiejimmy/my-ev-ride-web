@@ -7,7 +7,7 @@ import {ServiceWorkerModule} from '@angular/service-worker';
 //import {LocationStrategy,HashLocationStrategy} from '@angular/common';
 import {AppRoutes} from './routes';
 import {environment} from '../environments/environment';
-import 'rxjs/add/operator/toPromise';
+
 
 import {AccordionModule} from 'primeng/primeng';
 import {AutoCompleteModule} from 'primeng/primeng';
