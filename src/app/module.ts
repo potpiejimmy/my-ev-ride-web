@@ -189,7 +189,7 @@ import { BreadcrumbService } from './components/breadcrumb.service';
         // app specifics
         LocalStorageModule.withConfig({ prefix: 'myevride', storageType: 'localStorage' }), // or sessionStorage
         AgmCoreModule.forRoot({
-            apiKey: "AIzaSyD6MbJyWWmRUR9ZcfyDsMl5gNAW-MOHW0A", // for my-ev-ride, unrestricted
+            apiKey: "AIzaSyDGXLEg3ydrqj3q0CjC-KK5P4q5G2Udmn0", // for my-ev-ride, restricted
             libraries: ["places"]
           }),
         ReactiveFormsModule
