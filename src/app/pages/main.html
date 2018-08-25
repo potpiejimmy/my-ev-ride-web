@@ -18,8 +18,7 @@
     </div>
             
     <div class="ui-g-12 ui-lg-9">
-        <div class="card card-w-title">
-            <h1>Available cars near you</h1>
+        <p-card title="Available cars near you">
             <p>
                 Can't find your dream EV?
                 <a [routerLink]="['/my']">Define your own now ➡</a>
@@ -93,12 +92,11 @@
                     </div>
                 </ng-template>
             </p-dataTable>
-        </div>
+        </p-card>
     </div>
     <div class="ui-g-12 ui-lg-3 ui-fluid">
-        <div class="card card-w-title">
-            <h1>Set your location</h1>
+        <p-card title="Set your location">
             <choose-location #yourlocation (onLocationChanged)="onLocationChanged()" [mapObject]="selectedRow"></choose-location>
-        </div>
+        </p-card>
     </div>
 </div>
