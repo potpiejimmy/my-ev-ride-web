@@ -8,6 +8,11 @@ import {ServiceWorkerModule} from '@angular/service-worker';
 import {AppRoutes} from './app.routes';
 import {environment} from '../environments/environment';
 
+// Angular Material
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 // PrimeNG
 import {AccordionModule} from 'primeng/primeng';
 import {AutoCompleteModule} from 'primeng/primeng';
@@ -72,6 +77,11 @@ import {AboutComponent} from "./pages/about";
         AppRoutes,
         HttpClientModule,
         BrowserAnimationsModule,
+        // Angular Material:
+        MatToolbarModule,
+        MatButtonModule,
+        MatTooltipModule,
+        // PrimeNG:
         AccordionModule,
         AutoCompleteModule,
         ButtonModule,

@@ -1,9 +1,23 @@
-<a href='/'>
-    <div class="topbar-left">
-            <div class="logo"></div>
-    </div>
-    <div class="topbar-middle">
-        my-ev-ride.com
-    </div>
-</a>
 <div class="prototype_stamp"></div>
+<mat-toolbar id="primarybar" color="primary" class="mat-elevation-z6">
+    <span class="topbar-logo"></span>
+    <span class="topbar-middle">my-ev-ride.com</span>
+
+    <span style="flex: 1 1 auto;"></span>
+  
+    <button *ngIf="loginService.isLoggedIn" mat-icon-button (click)="logout()" matTooltip="Sign out">
+        <i class="fa fa-sign-out"></i>
+    </button>
+      <!--span>Logout ({{loginService.loginToken.email}})</span-->
+</mat-toolbar>
+<mat-toolbar id="secondarybar" color="secondary" class="mat-elevation-z6">
+    <button mat-button [routerLink]="['/']" matTooltip="Sign out">
+        <i class="material-icons topbar-menu-icon">directions_car</i> Find
+    </button>
+    <button mat-button [routerLink]="['/my']" matTooltip="Sign out">
+        <i class="material-icons topbar-menu-icon">folder_shared</i> My cars
+    </button>
+    <button mat-button [routerLink]="['/support']" matTooltip="Sign out">
+        <i class="material-icons topbar-menu-icon">share</i> Support
+    </button>
+</mat-toolbar>

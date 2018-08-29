@@ -3,15 +3,7 @@ import {AppComponent} from '../app.component';
 
 @Component({
     selector: 'app-footer',
-    template: `
-        <div class="footer">
-            <div class="card clearfix">
-                <a class="footer-text-left" [routerLink]="['/about']">About</a>
-                <span class="footer-text-right"><span class="ui-icon ui-icon-copyright"></span>  <span>All Rights Reserved</span></span>
-            </div>
-        </div>
-    `
+    templateUrl: 'footer.html'
 })
 export class AppFooterComponent {
-
 }

@@ -1,26 +1,25 @@
 <div class="ui-g ui-fluid">
     <div class="ui-g-12">
-        <div class="card card-w-title">
-            <h1>Login</h1>
+        <p-card title="Login">
             Please sign in using one of the methods below
-        </div>
+        </p-card>
     </div>
     <div class="ui-g-12 ui-md-7 ui-lg-4">
-        <div class="card" style="height: 100%;">
+        <p-card>
             <form id="loginform" (ngSubmit)="login()">
                 <div style="margin: 0em 0.5em 3em 0.5em;">
                     <h3>Login with my-ev-ride</h3>
                 </div>
                 <div style="margin: 1.5em 0.5em;">
-                    <span class="md-inputfield">
+                    <span class="ui-float-label">
                         <input #nameInputField type="text" name="user" pInputText [(ngModel)]="user" required/>
-                        <label>User Name</label>
+                        <label for="float-input">User Name</label>
                     </span>
                 </div>
                 <div style="margin: 1.5em 0.5em;">
-                        <span class="md-inputfield">
+                    <span class="ui-float-label">
                         <input type="password" name="password" pInputText [(ngModel)]="password" required/>
-                        <label>Password</label>
+                        <label for="float-input">Password</label>
                     </span>
                 </div>
             
@@ -28,30 +27,30 @@
                     <button pButton type="submit" label="Sign In" icon="ui-icon-person"></button>
                 </div>    
             </form>
-        </div>
+        </p-card>
     </div>
     <div class="ui-g-12 ui-md-7 ui-lg-4">
-        <div class="card" style="height: 100%;">
+        <p-card>
             <div style="margin: 0em 0.5em 7.8em 0.5em;">
                 <h3>Login with your Google account</h3>
             </div>
             <div style="margin: 1.5em 0.5em;">
                 <button id="google_signin" (click)="loginGoogle()"></button>
             </div>
-        </div>
+        </p-card>
     </div>
     <div class="ui-g-12 ui-md-7 ui-lg-4">
-        <div class="card" style="height: 100%;">
+        <p-card>
             <div style="margin: 0em 0.5em 7.8em 0.5em;">
                 <h3>Login with Facebook</h3>
             </div>
             <div style="margin: 1.5em 0.5em;">
                 <button id="facebook_signin" (click)="loginFacebook()"></button>
             </div>
-        </div>
+        </p-card>
     </div>
     <div class="ui-g-12">
-        <div class="card">
+        <p-card>
             <div class="ui-g ui-fluid">
                 <div class="ui-g-12 ui-md-7 ui-lg-6">
                     <form id="registerform" (ngSubmit)="register()">
@@ -59,27 +58,27 @@
                             <h3>Or register a new account at my-ev-ride.com</h3>
                         </div>
                         <div style="margin: 1.5em 0.5em;">
-                            <span class="md-inputfield">
+                            <span class="ui-float-label">
                                 <input type="text" name="user" pInputText [(ngModel)]="userNew" required/>
-                                <label>New User Name</label>
+                                <label for="float-input">New User Name</label>
                             </span>
                         </div>
                         <div style="margin: 1.5em 0.5em;">
-                                <span class="md-inputfield">
+                            <span class="ui-float-label">
                                 <input type="password" name="password" pPassword [(ngModel)]="passwordNew" required/>
-                                <label>New Password</label>
+                                <label for="float-input">New Password</label>
                             </span>
                         </div>
                         <div style="margin: 1.5em 0.5em;">
-                            <span class="md-inputfield">
+                            <span class="ui-float-label">
                                 <input type="password" name="passwordRepeat" pPassword [(ngModel)]="passwordRepeat" required/>
-                                <label>New Password (Repeat)</label>
+                                <label for="float-input">New Password (Repeat)</label>
                             </span>
                         </div>
                         <div style="margin: 1.5em 0.5em;">
-                            <span class="md-inputfield">
+                            <span class="ui-float-label">
                                 <input type="text" name="displayName" pInputText [(ngModel)]="displayName"/>
-                                <label>Your full name (optional)</label>
+                                <label for="float-input">Your full name (optional)</label>
                             </span>
                         </div>
                         <div>
@@ -93,6 +92,6 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </p-card>
     </div>
 </div>

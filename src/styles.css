@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~font-awesome/css/font-awesome.min.css";
 @import '~primeicons/primeicons.css';
 @import "~primeng/resources/themes/nova-light/theme.css";
@@ -17,6 +18,32 @@ body {
 
 body a {
     text-decoration: none;
+}
+
+body .ui-messages {
+    margin: 0;
+}
+
+.ui-fluid .ui-card {
+    height: 100%;
+}
+
+.mat-toolbar.mat-primary {
+    background: #4CAF50;
+    color: white;
+}
+
+.mat-toolbar.mat-secondary {
+    background: #2E7D32;
+    color: white;
+}
+
+#primarybar.mat-toolbar-single-row {
+    height: 76px;
+}
+
+#secondarybar.mat-toolbar-single-row {
+    height: 36px;
 }
 
 div.prototype_stamp {
@@ -43,21 +70,34 @@ div.prototype_stamp {
     text-align: center;
     min-height: 100vh;
 }
+
+.floatleft {
+    float: left;
+}
   
-.logo {
-    display: inline-block;
-    vertical-align: middle;
-    width: 112px;
-    height: 44px;
-    background: url("assets/layout/images/logo2x.png") top left no-repeat;
-    background-size: 112px 44px;
+.floatright {
+    float: right;
+}
+
+.topbar-menu-icon {
+    font-size:1.2em;
+    padding: 0em 0.5em;
+}
+
+.topbar-logo {
+    width: 93px;
+    height: 33px;
+    background: url("assets/layout/images/logo.png") top left no-repeat;
+    background-size: 93px 33px;
 }
 
 .topbar-middle {
-    padding: 27px 10px;
-    float: left;
-    color: white;
-    font-size: 1.2em;
+    margin: 0.5em;
+    font-size: 0.9em;
+}
+
+#layout-content {
+    padding: 16px;
 }
 
 a.footer-text-left {
