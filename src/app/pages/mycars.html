@@ -10,7 +10,7 @@
             <h1>Your cars</h1>
             <div class="ui-g ui-fluid">
                 <div class="ui-g-12">
-                    <p-dataTable [value]="mycars" [responsive]="true" selectionMode="single" [(selection)]="car" (onRowSelect)="onRowSelect($event)">
+                    <!--p-table [value]="mycars" [responsive]="true" selectionMode="single" [(selection)]="car" (onRowSelect)="onRowSelect($event)">
                         <p-column [style]="{'width':'148px'}">
                             <ng-template let-row="rowData" pTemplate="body">
                                 <img src="assets/layout/images/cars/{{row.image}}_s.png" />
@@ -30,7 +30,7 @@
                                 <b>{{app.priceFormatted(row.value/row.sharecount, row.currency)}}</b>
                             </ng-template>
                         </p-column>
-                    </p-dataTable>
+                    </p-table-->
                 </div>
                 <div class="ui-g-12 ui-md-6 ui-lg-2">
                     <button pButton type="button" (click)="newCar()" label="New car" *ngIf="mycars.length < 5"></button>

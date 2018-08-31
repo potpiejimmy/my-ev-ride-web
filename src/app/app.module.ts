@@ -36,7 +36,6 @@ import {ProgressBarModule} from 'primeng/primeng';
 import {RadioButtonModule} from 'primeng/primeng';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {SpinnerModule} from 'primeng/primeng';
-import {DataTableModule} from 'primeng/primeng';
 import {TableModule} from 'primeng/table';
 import {TabMenuModule} from 'primeng/primeng';
 import {ToolbarModule} from 'primeng/primeng';
@@ -104,7 +103,6 @@ import {AboutComponent} from "./pages/about";
         RadioButtonModule,
         ScrollPanelModule,
         SpinnerModule,
-        DataTableModule,
         TableModule,
         TabMenuModule,
         ToolbarModule,

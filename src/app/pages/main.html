@@ -22,23 +22,59 @@
                 Can't find your dream EV?
                 <a [routerLink]="['/my']">Define your own now ➡</a>
             </p>
-            <p-dataTable #carsTable [value]="cars" 
-                                    [responsive]="true"
+            <p-table #carsTable [value]="cars"  autoLayout="true" sortMode="none" selectionMode="none" dataKey="id">
+<!--                                    [responsive]="true"
                                     [rows]="5" [paginator]="true" [pageLinks]="3"  [rowsPerPageOptions]="[5,10,20,50,100]"
                                     selectionMode="single"
                                     expandableRows="true"
                                     [(selection)]="selectedRow"
                                     [expandedRows]="expandedRows"
-                                    (onRowSelect)="onRowSelect($event)">
-                <p-header>{{carsTable.totalRecords === 1000 ? '>' : ''}}{{carsTable.totalRecords}} cars found.</p-header>
-                <p-column header="Distance" [style]="{'text-align':'right','width':'100px'}">
+                                    (onRowSelect)="onRowSelect($event)"-->
+                <ng-template pTemplate="caption">
+                    {{carsTable.totalRecords === 1000 ? '>' : ''}}{{carsTable.totalRecords}} cars found.
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Distance &uarr;</th>
+                        <th></th>
+                        <th>Make &amp; Model</th>
+                        <th>No. of Owners</th>
+                        <th>Your price</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-row let-i="rowIndex" let-expandedRows="expanded">
+                    <tr [pSelectableRow]="row" [pRowToggler]="row">
+                        <td>
+                            <b>{{row.distance}}</b>
+                        </td>
+                        <td>
+                            <img src="assets/layout/images/cars/{{row.image}}_s.png" />
+                        </td>
+                        <td>
+                            <b>{{row.make}}</b><br/>{{row.model}}
+                        </td>
+                        <td>
+                            <span *ngIf="row.sharecount < 5">
+                                <i class="material-icons">person</i>
+                                <ng-template ngFor [ngForOf]="arrayOfLength(row.sharecount-1)" let-index="index + 1">
+                                    <i class="material-icons" style="color: gray;">person</i>
+                                </ng-template>
+                            </span>
+                            <span *ngIf="row.sharecount >= 5">
+                                {{row.sharecount}}
+                            </span>
+                        </td>
+                        <td>
+                            <span style="font-weight: bold; font-size: 1.1em;">{{app.priceFormatted(row.value/row.sharecount, row.currency)}}</span>
+                        </td>
+                    </tr>
+                </ng-template>
+                <!--p-column header="Distance" [style]="{'text-align':'right','width':'100px'}">
                     <ng-template let-row="rowData" pTemplate="body">
-                        <b>{{row.distance}}</b>
                     </ng-template>
                 </p-column>
                 <p-column [style]="{'width':'148px'}">
                     <ng-template let-row="rowData" pTemplate="body">
-                      <img src="assets/layout/images/cars/{{row.image}}_s.png" />
                     </ng-template>
                 </p-column>
                 <p-column header="Make &amp; Model" [filter]="true" field="make" filterMatchMode="equals">
@@ -46,28 +82,17 @@
                         <p-dropdown [options]="carCfg.makes" [style]="{'width':'100%'}" (onChange)="carsTable.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter"></p-dropdown>
                     </ng-template>
                     <ng-template let-row="rowData" pTemplate="body">
-                        <b>{{row.make}}</b><br/>{{row.model}}
                     </ng-template>
                 </p-column>
                 <p-column header="No. of Owners" [style]="{'width':'80px'}">
                     <ng-template let-row="rowData" pTemplate="body">
-                        <span *ngIf="row.sharecount < 5">
-                            <i class="material-icons">person</i>
-                            <ng-template ngFor [ngForOf]="arrayOfLength(row.sharecount-1)" let-index="index + 1">
-                                <i class="material-icons" style="color: gray;">person</i>
-                            </ng-template>
-                        </span>
-                        <span *ngIf="row.sharecount >= 5">
-                            {{row.sharecount}}
-                        </span>
                     </ng-template>
                 </p-column>
                 <p-column header="Your price" [style]="{'text-align':'right','width':'120px'}">
                     <ng-template let-row="rowData" pTemplate="body">
-                      <span style="font-weight: bold; font-size: 1.1em;">{{app.priceFormatted(row.value/row.sharecount, row.currency)}}</span>
                     </ng-template>
-                </p-column>
-                <ng-template let-row pTemplate="rowexpansion">
+                </p-column-->
+                <!--ng-template let-row pTemplate="rowexpansion">
                     <div class="ui-g ui-fluid">
                         <div class="ui-g-12 ui-md-6 ui-lg-8" style="text-align: center">
                             <p>
@@ -89,8 +114,8 @@
                             </div>
                         </div>
                     </div>
-                </ng-template>
-            </p-dataTable>
+                </ng-template-->
+            </p-table>
         </p-card>
     </div>
     <div class="ui-g-12 ui-lg-3 ui-fluid">
