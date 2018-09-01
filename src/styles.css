@@ -24,6 +24,10 @@ body .ui-messages {
     margin: 0;
 }
 
+body .ui-table .ui-table-tbody > tr.ui-state-highlight, body .ui-table .ui-table-tbody > tr:nth-child(even).ui-state-highlight {
+    background-color: #2E7D32;
+}
+
 .ui-fluid .ui-card {
     height: 100%;
 }
