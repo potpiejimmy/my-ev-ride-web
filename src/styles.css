@@ -54,6 +54,7 @@ div.prototype_stamp {
     top: 0px;
     width: 120px;
     height: 68px;
+    z-index: 99;
 }
 @media (max-width: 1024px) {
     div.prototype_stamp {

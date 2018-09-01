@@ -18,6 +18,7 @@ export class MainComponent implements AfterViewInit {
   expandedRows = [];
   selectedRow: any;
   lastSelectedRow: any;
+  filteredRowCount: number;
 
   constructor(public app: AppService,
     private assetsService: AssetsService,
@@ -57,6 +58,7 @@ export class MainComponent implements AfterViewInit {
         e.distance = e.distance + (isM ? " m" : " km");
       });
       this.cars = c;
+      this.filteredRowCount = c.length;
     });
   }
 
@@ -85,5 +87,9 @@ export class MainComponent implements AfterViewInit {
     dist *= 60 * 1.1515
     dist *= 1.609344 // km
     return dist;
+  }
+
+  onFilter(event) {
+    this.filteredRowCount = event.filteredValue.length;
   }
 }
