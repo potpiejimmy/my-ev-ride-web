@@ -32,6 +32,12 @@ body .ui-table .ui-table-tbody > tr.ui-state-highlight, body .ui-table .ui-table
     height: 100%;
 }
 
+.ui-fluid .ui-card-content, .ui-fluid .ui-card-body {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
 .mat-toolbar.mat-primary {
     background: #4CAF50;
     color: white;

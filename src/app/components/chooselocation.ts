@@ -1,6 +1,5 @@
+/// <reference types="@types/googlemaps" />
 import { Component, ElementRef, NgZone, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
 import { LocalStorageService } from 'angular-2-local-storage';
 
@@ -8,7 +7,8 @@ import { LocalStorageService } from 'angular-2-local-storage';
     selector: 'choose-location',
     styles: [`
       agm-map {
-        height: 240px;
+        flex: 1 1 auto;
+        height: 100%;
       }
       #search {
           width: 100%;
@@ -44,8 +44,6 @@ import { LocalStorageService } from 'angular-2-local-storage';
     public zoom: number;
     _mapObject: any;
     
-    public searchControl: FormControl;
-  
     @ViewChild("search")
     public searchElementRef: ElementRef;
   
@@ -60,9 +58,6 @@ import { LocalStorageService } from 'angular-2-local-storage';
 
       if (!this.latitude && !this.longitude) this.initDefaultPosition();
 
-      //create search FormControl
-      this.searchControl = new FormControl();
-  
       //load Places Autocomplete
       this.mapsAPILoader.load().then(() => {
         let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {

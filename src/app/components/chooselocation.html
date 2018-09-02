@@ -1,8 +1,8 @@
-<div class="ui-inputgroup">
+<div fxFlex="0 1 auto" class="ui-inputgroup">
     <span class="ui-inputgroup-addon"><i class="fa fa-map-pin"></i></span>
-    <input pInputText placeholder="Enter street name, city" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" size="50" class="form-control" #search [formControl]="searchControl" [(ngModel)]="formattedAddressInput">
+    <input pInputText placeholder="Enter street name, city" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" size="50" class="form-control" #search [(ngModel)]="formattedAddressInput">
 </div>
-<agm-map #agmMap [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+<agm-map #agmMap fxFlex="1 1 auto" fxLayout="column" [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
     <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
     <agm-marker *ngIf="mapObject" iconUrl="assets/layout/images/carmarker.png" [latitude]="mapObject.lat" [longitude]="mapObject.lon"></agm-marker>
 </agm-map>

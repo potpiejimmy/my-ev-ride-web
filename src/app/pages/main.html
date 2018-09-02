@@ -28,8 +28,9 @@
                                     [rows]="5" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20,50,100]"
                                     selectionMode="single"
                                     expandableRows="true"
+                                    [expandedRowKeys]="expandedRows"
                                     [(selection)]="selectedRow"
-                                    (onRowSelect)="onRowSelect($event)">
+                                    (onRowExpand)="onRowExpand($event)">
                 <ng-template pTemplate="caption">
                     {{filteredRowCount === 1000 ? '>' : ''}}{{filteredRowCount}} cars found.
                 </ng-template>
@@ -81,29 +82,6 @@
                         </td>
                     </tr>
                 </ng-template>
-                <!--p-column header="Distance" [style]="{'text-align':'right','width':'100px'}">
-                    <ng-template let-row="rowData" pTemplate="body">
-                    </ng-template>
-                </p-column>
-                <p-column [style]="{'width':'148px'}">
-                    <ng-template let-row="rowData" pTemplate="body">
-                    </ng-template>
-                </p-column>
-                <p-column header="Make &amp; Model" [filter]="true" field="make" filterMatchMode="equals">
-                    <ng-template pTemplate="filter" let-col>
-                        <p-dropdown [options]="carCfg.makes" [style]="{'width':'100%'}" (onChange)="carsTable.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter"></p-dropdown>
-                    </ng-template>
-                    <ng-template let-row="rowData" pTemplate="body">
-                    </ng-template>
-                </p-column>
-                <p-column header="No. of Owners" [style]="{'width':'80px'}">
-                    <ng-template let-row="rowData" pTemplate="body">
-                    </ng-template>
-                </p-column>
-                <p-column header="Your price" [style]="{'text-align':'right','width':'120px'}">
-                    <ng-template let-row="rowData" pTemplate="body">
-                    </ng-template>
-                </p-column-->
                 <ng-template let-row pTemplate="rowexpansion">
                     <tr>
                     <td colspan="7">
@@ -140,8 +118,9 @@
         </p-card>
     </div>
     <div class="ui-g-12 ui-lg-3 ui-fluid">
-        <p-card title="Set your location">
-            <choose-location #yourlocation (onLocationChanged)="onLocationChanged()" [mapObject]="selectedRow"></choose-location>
+        <p-card>
+            <div fxFlex="0 1 auto"><h3>Set your location</h3></div>
+            <choose-location #yourlocation fxFlex="1 1 auto" fxLayout="column" (onLocationChanged)="onLocationChanged()" [mapObject]="selectedRow"></choose-location>
         </p-card>
     </div>
 </div>

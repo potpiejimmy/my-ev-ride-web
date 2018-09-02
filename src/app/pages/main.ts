@@ -15,9 +15,8 @@ export class MainComponent implements AfterViewInit {
   public yourLocation: ChooseLocationComponent;
 
   cars = [];
-  expandedRows = [];
+  expandedRows = {};
   selectedRow: any;
-  lastSelectedRow: any;
   filteredRowCount: number;
 
   constructor(public app: AppService,
@@ -33,18 +32,11 @@ export class MainComponent implements AfterViewInit {
     this.refresh();
   }
 
-  onRowSelect(sel: any) {
-    this.expandedRows.pop();
-    if (this.lastSelectedRow && this.lastSelectedRow.id === sel.data.id) {
-      // deselect if already selected
-      this.selectedRow = this.lastSelectedRow = null;
-    } else {
-      // select and expand the new row
-      this.expandedRows.push(sel.data);
-      this.lastSelectedRow = sel.data;
-    }
+  onRowExpand(sel: any) {
+    this.expandedRows = {}; // collapse all
+    this.expandedRows[sel.data.id] = 1;
   }
-    
+
   refresh() {
     this.assetsService.getCars(this.yourLocation.longitude, this.yourLocation.latitude).then(c => {
       c.forEach(e => {
