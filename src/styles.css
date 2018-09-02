@@ -28,6 +28,10 @@ body .ui-table .ui-table-tbody > tr.ui-state-highlight, body .ui-table .ui-table
     background-color: #2E7D32;
 }
 
+body .ui-widget-content p {
+    margin: 0.7em 0;
+}
+
 .ui-fluid .ui-card {
     height: 100%;
 }

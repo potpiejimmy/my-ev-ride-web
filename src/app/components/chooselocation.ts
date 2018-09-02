@@ -5,15 +5,6 @@ import { LocalStorageService } from 'angular-2-local-storage';
 
 @Component({
     selector: 'choose-location',
-    styles: [`
-      agm-map {
-        flex: 1 1 auto;
-        height: 100%;
-      }
-      #search {
-          width: 100%;
-      }
-    `],
     templateUrl: 'chooselocation.html'
   })
   export class ChooseLocationComponent implements OnInit {
