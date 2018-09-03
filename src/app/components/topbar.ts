@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {AppComponent} from '../app.component';
+import { Component } from '@angular/core';
+import { AppService } from '../services/app.service';
 import { LoginService } from '../services/login.service';
 
 @Component({
@@ -8,7 +8,5 @@ import { LoginService } from '../services/login.service';
 })
 export class AppTopbarComponent {
 
-    constructor(public app: AppComponent,
-                public loginService: LoginService) {}
-
+    constructor(public app: AppService) {}
 }

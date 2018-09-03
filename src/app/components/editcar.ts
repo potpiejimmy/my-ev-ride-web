@@ -15,34 +15,15 @@ export class EditCarComponent {
   @ViewChild("carlocation")
   carLocation: ChooseLocationComponent;
 
-  editform: FormGroup;
-
   _imagesForModel = null;
   
   @Input() car: any = null;
   @Output() done = new EventEmitter<any>();
 
   constructor(public app: AppService,
-    private fb: FormBuilder,
     private router: Router,
     private assetsService: AssetsService,
     public carCfg: CarConfig) {}
-
-  ngOnInit() {
-    this.buildEditForm();
-  }
-
-  private buildEditForm() {
-    this.editform = this.fb.group({
-      'make': new FormControl('', Validators.required),
-      'model': new FormControl('', Validators.required),
-      'image': new FormControl('', Validators.required),
-      'infotext': new FormControl('', Validators.required),
-      'teasertext': new FormControl('', Validators.required),
-      'value': new FormControl('', Validators.required),
-      'sharecount': new FormControl('', Validators.required),
-    });
-  }
 
   imagesForModel(make: string, model: string): any {
       if (!this._imagesForModel) {
@@ -72,8 +53,18 @@ export class EditCarComponent {
     };
   }
 
+  isFormValid() {
+    return this.car.make &&
+           this.car.model &&
+           this.car.image &&
+           this.car.value &&
+           this.car.infotext &&
+           this.car.sharecount &&
+           this.car.teasertext;
+  }
+
   save() {
-    if (!this.editform.valid) {
+    if (!this.isFormValid()) {
       this.app.setMessage("Form validation failure", "Please enter all required fields", "error");
       return;
     }

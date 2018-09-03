@@ -5,7 +5,7 @@
 
     <span style="flex: 1 1 auto;"></span>
   
-    <button *ngIf="loginService.isLoggedIn" mat-icon-button (click)="logout()" matTooltip="Sign out">
+    <button *ngIf="app.loginService.isLoggedIn" mat-icon-button (click)="app.logout()" matTooltip="Sign out">
         <i class="fa fa-sign-out"></i>
     </button>
       <!--span>Logout ({{loginService.loginToken.email}})</span-->
@@ -21,3 +21,4 @@
         <i class="material-icons topbar-menu-icon">share</i> Support
     </button>
 </mat-toolbar>
+<p-messages [value]="app.messages"></p-messages>

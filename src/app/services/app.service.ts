@@ -1,4 +1,5 @@
 import { Injectable }    from '@angular/core';
+import { Router } from '@angular/router';
 import { Message }  from 'primeng/primeng';
 import { LoginService } from './login.service';
 
@@ -7,7 +8,10 @@ export class AppService {
 
     messages: Message[];
 
-    constructor(public loginService: LoginService) {}
+    constructor(
+        public loginService: LoginService,
+        private router: Router) {
+    }
 
     setMessage(summary: string, detail: string, severity: string = "error") {
         setTimeout(() => {
@@ -25,6 +29,7 @@ export class AppService {
     logout(): void {
         this.loginService.logout();
         this.clearMessages();
+        this.router.navigate(['/']);
     }
 
     // -- specifics

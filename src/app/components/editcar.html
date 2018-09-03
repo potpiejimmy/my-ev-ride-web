@@ -1,12 +1,11 @@
-<div class="card card-w-title">
-    <h1>Define your car</h1>
-    <form [formGroup]="editform" (ngSubmit)="save()">
+<p-card title="Define your car">
+    <form #editform (ngSubmit)="save()">
         <div class="ui-g ui-fluid">
             <div class="ui-g-12 ui-md-2">
                 Make:
             </div>
             <div class="ui-g-12 ui-md-8">
-                <p-dropdown formControlName="make" [autoWidth]="false" [options]="carCfg.makes" [(ngModel)]="car.make" (onChange)="onMakeChanged()"></p-dropdown>
+                <p-dropdown required name="make" [autoWidth]="false" [options]="carCfg.makes" [(ngModel)]="car.make" (onChange)="onMakeChanged()"></p-dropdown>
             </div>
             <div class="ui-g-12 ui-md-2">
             </div>
@@ -15,7 +14,7 @@
                 Model:
             </div>
             <div class="ui-g-12 ui-md-8">
-                <p-dropdown formControlName="model" [autoWidth]="false" [options]="carCfg.models[car.make]" [(ngModel)]="car.model" (onChange)="onModelChanged()"></p-dropdown>
+                <p-dropdown required name="model" [autoWidth]="false" [options]="carCfg.models[car.make]" [(ngModel)]="car.model" (onChange)="onModelChanged()"></p-dropdown>
             </div>
             <div class="ui-g-12 ui-md-2">
             </div>
@@ -28,7 +27,7 @@
                     <img src="assets/layout/images/cars/{{car.image}}.png"/>
                 </div>
                 <div>
-                    <p-dropdown formControlName="image" [autoWidth]="false" [style]="{'width':'200px'}" [options]="imagesForModel(car.make,car.model)" [(ngModel)]="car.image">
+                    <p-dropdown required name="image" [autoWidth]="false" [style]="{'width':'200px'}" [options]="imagesForModel(car.make,car.model)" [(ngModel)]="car.image">
                         <ng-template let-image pTemplate="item">
                             <img *ngIf="image.value" src="assets/layout/images/cars/{{image.value}}_s.png"/>
                         </ng-template>
@@ -42,7 +41,7 @@
                 List Price:
             </div>
             <div class="ui-g-12 ui-md-2">
-                <p-spinner formControlName="value" [(ngModel)]="car.value" placeholder="Price" [min]="1" [max]="1000000"></p-spinner>
+                <p-spinner required name="value" [(ngModel)]="car.value" placeholder="Price" [min]="1" [max]="1000000"></p-spinner>
             </div>
             <div class="ui-g-12 ui-md-8">
             </div>
@@ -51,7 +50,7 @@
                 Info / Included Extras:
             </div>
             <div class="ui-g-12 ui-md-8">
-                <textarea pInputTextarea formControlName="infotext" autoResize="true" [(ngModel)]="car.infotext" placeholder="Info" style="height: 5em;"></textarea>
+                <textarea pInputTextarea required name="infotext" autoResize="true" [(ngModel)]="car.infotext" placeholder="Info" style="height: 5em;"></textarea>
             </div>
             <div class="ui-g-12 ui-md-2">
             </div>
@@ -60,7 +59,7 @@
                 No. of Co-Owners:
             </div>
             <div class="ui-g-12 ui-md-2">
-                <p-spinner formControlName="sharecount" [(ngModel)]="car.sharecount" placeholder="Co-Owners" [min]="2" [max]="100"></p-spinner>
+                <p-spinner required name="sharecount" [(ngModel)]="car.sharecount" placeholder="Co-Owners" [min]="2" [max]="100"></p-spinner>
             </div>
             <div class="ui-g-12 ui-md-8">
             </div>
@@ -69,7 +68,7 @@
                 Gallery text:
             </div>
             <div class="ui-g-12 ui-md-8">
-                <textarea pInputTextarea formControlName="teasertext" autoResize="true" [(ngModel)]="car.teasertext" placeholder="Enter sharing info, car usage times etc." style="height: 5em;"></textarea>
+                <textarea pInputTextarea required name="teasertext" autoResize="true" [(ngModel)]="car.teasertext" placeholder="Enter sharing info, car usage times etc." style="height: 5em;"></textarea>
             </div>
             <div class="ui-g-12 ui-md-2">
             </div>
@@ -78,19 +77,19 @@
                 Car location:
             </div>
             <div class="ui-g-12 ui-md-8">
-                <choose-location #carlocation [latitude]="car.lat" [longitude]="car.lon" [formattedAddressInput]="car.location"></choose-location>
+                <choose-location #carlocation fxFlex="1 1 auto" fxLayout="column" [latitude]="car.lat" [longitude]="car.lon" [formattedAddressInput]="car.location"></choose-location>
             </div>
             <div class="ui-g-12 ui-md-2">
             </div>
 
             <div class="ui-g-12 ui-md-2">
-                <button pButton type="submit" label="Save" [disabled]="!editform.valid"></button>
+                <button pButton type="submit" label="Save" [disabled]="!isFormValid()"></button>
             </div>
             <div class="ui-g-12 ui-md-2">
-                <button pButton type="button" (click)="cancel()" label="Cancel"></button>
+                <button pButton type="button" class="ui-button-secondary" (click)="cancel()" label="Cancel"></button>
             </div>
             <div class="ui-g-12 ui-md-2" *ngIf="car.id">
-                <button pButton type="button" class="deep-orange-btn" (click)="delete()" label="Delete this car"></button>
+                <button pButton type="button" class="ui-button-danger" (click)="delete()" label="Delete this car"></button>
             </div>
             <div class="ui-g-12 ui-md-6">
             </div>
@@ -98,4 +97,4 @@
         </div>
     </form>
     <p-messages [value]="app.messages"></p-messages>
-</div>
+</p-card>

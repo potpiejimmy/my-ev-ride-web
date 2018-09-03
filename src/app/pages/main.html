@@ -1,4 +1,4 @@
-<div class="ui-g">
+<div class="ui-g ui-fluid">
     
     <div class="ui-g-12">
         <p-card title="Welcome to my-ev-ride.com">
@@ -16,7 +16,7 @@
         </div>
     </div>
             
-    <div class="ui-g-12 ui-lg-9">
+    <div class="ui-g-12 ui-lg-8 ui-xl-7">
         <p-card title="Available cars near you">
             <p>
                 Can't find your dream EV?
@@ -48,7 +48,7 @@
                         <th></th>
                         <th></th>
                         <th>
-                            <p-dropdown [options]="carCfg.makes" [style]="{'width':'100%'}" (onChange)="carsTable.filter($event.value,'make','equals')"></p-dropdown>
+                            <p-dropdown [options]="carCfg.makes" [style]="{'width':'100%'}" appendTo="body" (onChange)="carsTable.filter($event.value,'make','equals')"></p-dropdown>
                         </th>
                         <th></th>
                         <th></th>
@@ -117,7 +117,7 @@
             </p-table>
         </p-card>
     </div>
-    <div class="ui-g-12 ui-lg-3 ui-fluid">
+    <div class="ui-g-12 ui-lg-4 ui-xl-5">
         <p-card>
             <div fxFlex="0 1 auto"><h3>Set your location</h3></div>
             <choose-location #yourlocation fxFlex="1 1 auto" fxLayout="column" (onLocationChanged)="onLocationChanged()" [mapObject]="selectedRow"></choose-location>
