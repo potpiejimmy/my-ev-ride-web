@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     displayName: string;
     captchaToken: string;
     captchaSiteKey = environment.captchaSiteKey;
+    showCaptcha: boolean;
 
     messages = [];
 
@@ -38,6 +39,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit() {
         this.nameInputField.nativeElement.focus();
+        setTimeout(()=>this.showCaptcha=true, 200);
     }
 
     login() {

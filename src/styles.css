@@ -111,6 +111,10 @@ div.prototype_stamp {
     font-size: 0.85em;
 }
 
+.topbar-right i {
+    font-size: 1.25em;
+}
+
 #layout-content {
     padding: 16px;
 }

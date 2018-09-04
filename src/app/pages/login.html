@@ -81,7 +81,7 @@
                                 <label for="float-input">Your full name (optional)</label>
                             </span>
                         </div>
-                        <div>
+                        <div *ngIf="showCaptcha">
                             <p-captcha [siteKey]="captchaSiteKey" (onResponse)="onCaptchaResponse($event)"></p-captcha>
                         </div>
                         <div style="margin: 1.5em 0.5em;">

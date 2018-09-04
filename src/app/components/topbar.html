@@ -5,10 +5,11 @@
 
     <span style="flex: 1 1 auto;"></span>
   
-    <button *ngIf="app.loginService.isLoggedIn" mat-icon-button (click)="app.logout()" matTooltip="Sign out">
-        <i class="fa fa-sign-out"></i>
-    </button>
-      <!--span>Logout ({{loginService.loginToken.email}})</span-->
+    <span class="topbar-right">
+        <button *ngIf="app.loginService.isLoggedIn" mat-icon-button (click)="app.logout()" matTooltip="Sign out">
+            <i class="fa fa-sign-out"></i>
+        </button>
+    </span>
 </mat-toolbar>
 <mat-toolbar id="secondarybar" color="secondary" class="mat-elevation-z6">
     <button mat-button [routerLink]="['/']" matTooltip="Sign out">
