@@ -24,7 +24,7 @@
             </div>
             <div class="ui-g-12 ui-md-8">
                 <div *ngIf="car.image">
-                    <img src="assets/layout/images/cars/{{car.image}}.png"/>
+                    <img style="max-width:100%;" src="assets/layout/images/cars/{{car.image}}.png"/>
                 </div>
                 <div>
                     <p-dropdown required name="image" [autoWidth]="false" [style]="{'width':'200px'}" [options]="imagesForModel(car.make,car.model)" [(ngModel)]="car.image">

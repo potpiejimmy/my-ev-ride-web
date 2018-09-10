@@ -115,6 +115,11 @@ div.prototype_stamp {
     font-size: 1.25em;
 }
 
+.legaldisclaimer {
+    display:block;
+    background: lightyellow;
+}
+
 #layout-content {
     padding: 16px;
 }
