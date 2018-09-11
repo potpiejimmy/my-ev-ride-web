@@ -67,6 +67,8 @@ import {MyCarsComponent}  from './pages/mycars';
 import {EditCarComponent}  from './components/editcar';
 import {ChooseLocationComponent}  from './components/chooselocation';
 import {CampagneComponent} from "./pages/campagne";
+import {TermsComponent} from "./pages/terms";
+import {PrivacyComponent} from "./pages/privacy";
 import {AboutComponent} from "./pages/about";
 
 @NgModule({
@@ -128,7 +130,9 @@ import {AboutComponent} from "./pages/about";
         CampagneComponent,
         AboutComponent,
         EditCarComponent,
-        ChooseLocationComponent
+        ChooseLocationComponent,
+        TermsComponent,
+        PrivacyComponent
     ],
     providers: [
 //       {provide: LocationStrategy, useClass: HashLocationStrategy},

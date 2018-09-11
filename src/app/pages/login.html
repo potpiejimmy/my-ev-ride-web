@@ -31,21 +31,29 @@
     </div>
     <div class="ui-g-12 ui-md-7 ui-lg-4">
         <p-card>
-            <div style="margin: 0em 0.5em 7.8em 0.5em;">
+            <div style="margin: 0em 0.5em 5.5em 0.5em;">
                 <h3>Login with your Google account</h3>
             </div>
-            <div style="margin: 1.5em 0.5em;">
-                <button id="google_signin" (click)="loginGoogle()"></button>
+            <div style="margin: 0.5em 0.75em;">
+                <p-checkbox name="groupname" label="I agree to the " binary="true" (onChange)="google_signin.disabled=!$event;"></p-checkbox>
+                <a style="vertical-align: middle" [routerLink]="['/terms']">Terms &amp; Conditions</a>
+            </div>
+            <div style="margin: 0.5em 0.5em;">
+                <button #google_signin id="google_signin" (click)="loginGoogle()" [disabled]="true"></button>
             </div>
         </p-card>
     </div>
     <div class="ui-g-12 ui-md-7 ui-lg-4">
         <p-card>
-            <div style="margin: 0em 0.5em 7.8em 0.5em;">
+            <div style="margin: 0em 0.5em 5.5em 0.5em;">
                 <h3>Login with Facebook</h3>
             </div>
-            <div style="margin: 1.5em 0.5em;">
-                <button id="facebook_signin" (click)="loginFacebook()"></button>
+            <div style="margin: 0.5em 0.75em;">
+                <p-checkbox name="groupname" label="I agree to the " binary="true" (onChange)="facebook_signin.disabled=!$event;"></p-checkbox>
+                <a style="vertical-align: middle" [routerLink]="['/terms']">Terms &amp; Conditions</a>
+            </div>
+            <div style="margin: 0.5em 0.5em;">
+                <button #facebook_signin id="facebook_signin" (click)="loginFacebook()" [disabled]="true"></button>
             </div>
         </p-card>
     </div>
@@ -85,7 +93,11 @@
                             <p-captcha [siteKey]="captchaSiteKey" (onResponse)="onCaptchaResponse($event)"></p-captcha>
                         </div>
                         <div style="margin: 1.5em 0.5em;">
-                            <button pButton type="submit" label="Register" icon="ui-icon-person" [disabled]="!captchaToken"></button>
+                            <p-checkbox name="groupname" label="I agree to the " binary="true" [(ngModel)]="agreeToTerms"></p-checkbox>
+                            <a style="vertical-align: middle" [routerLink]="['/terms']">Terms &amp; Conditions</a>
+                        </div>
+                        <div style="margin: 1.5em 0.5em;">
+                            <button pButton type="submit" label="Register" icon="ui-icon-person" [disabled]="!registerFormValid()"></button>
                         </div>
                         <p-messages [value]="messages"></p-messages>
                         <p-messages [value]="app.messages"></p-messages>

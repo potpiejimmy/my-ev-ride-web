@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     captchaToken: string;
     captchaSiteKey = environment.captchaSiteKey;
     showCaptcha: boolean;
+    agreeToTerms: boolean = false;
 
     messages = [];
 
@@ -90,5 +91,13 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
     onCaptchaResponse(response) : void {
         this.captchaToken = response.response;
+    }
+
+    registerFormValid(): boolean {
+        return this.captchaToken &&
+               this.agreeToTerms &&
+               this.userNew && this.userNew.length>0 &&
+               this.passwordNew && this.passwordNew.length>0 &&
+               this.passwordRepeat && this.passwordRepeat.length>0;
     }
 }
