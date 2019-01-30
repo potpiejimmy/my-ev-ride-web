@@ -30,7 +30,8 @@
                                     expandableRows="true"
                                     [expandedRowKeys]="expandedRows"
                                     [(selection)]="selectedRow"
-                                    (onRowExpand)="onRowExpand($event)">
+                                    (onRowSelect)="onRowSelectionChange($event)"
+                                    (onRowUnselect)="onRowSelectionChange($event)">
                 <ng-template pTemplate="caption">
                     {{filteredRowCount === 1000 ? '>' : ''}}{{filteredRowCount}} cars found.
                 </ng-template>

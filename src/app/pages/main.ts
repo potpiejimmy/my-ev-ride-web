@@ -32,9 +32,10 @@ export class MainComponent implements AfterViewInit {
     this.refresh();
   }
 
-  onRowExpand(sel: any) {
+  onRowSelectionChange(sel: any) {
     this.expandedRows = {}; // collapse all
-    this.expandedRows[sel.data.id] = 1;
+    if(this.selectedRow || this.selectedRow != null && this.selectedRow.id != sel.data.id)
+      this.expandedRows[sel.data.id] = 1;
   }
 
   refresh() {
