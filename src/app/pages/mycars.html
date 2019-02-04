@@ -1,11 +1,11 @@
 <div class="ui-g ui-fluid">
     <div class="ui-g-12">
-        <p-card title="Welcome">
+        <p-card header="Welcome">
             {{app.loginService.loginToken.display_name}} ({{app.loginService.loginToken.name}})
         </p-card>
     </div>
     <div class="ui-g-12" *ngIf="!car">
-        <p-card title="Your cars">
+        <p-card header="Your cars">
             <div class="ui-g ui-fluid">
                 <div class="ui-g-12">
                     <p-table [value]="mycars" [responsive]="true" selectionMode="single" [(selection)]="car" (onRowSelect)="onRowSelect($event)" dataKey="id">
